@@ -16,14 +16,14 @@ public class MainActivity extends AppCompatActivity {
         ((Button)findViewById(R.id.button)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, MainActivity2.class);
+                Intent i = new Intent(MainActivity.this, logIn.class);
                 startActivity(i);
             }
         });
         ((Button)findViewById(R.id.button2)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, MainActivity3.class);
+                Intent i = new Intent(MainActivity.this, register.class);
                 startActivity(i);
             }
         });

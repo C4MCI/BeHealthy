@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "156029718740",
+    "project_id": "cilekadam-f4e0b",
+    "storage_bucket": "cilekadam-f4e0b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:156029718740:android:4c365a987a42ebc6e4eb41",
+        "android_client_info": {
+          "package_name": "com.example.cilek_adam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "156029718740-qsojgpr0chk5pgsp723p82lffr59jnlu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBurv9r_INnWiYHfQTpWB9BphSg6_0wHA0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "156029718740-qsojgpr0chk5pgsp723p82lffr59jnlu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -44,7 +44,7 @@ FirebaseAuth mAuth;
         weightET = findViewById(R.id.weightEditText);
         heightET = findViewById(R.id.heightEditText);
         saveB = findViewById(R.id.saveButton);
-        sexS = findViewById(R.id.sex);
+        sexS = findViewById(R.id.switchButton);
 
 
         saveB.setOnClickListener(new View.OnClickListener() {
@@ -69,6 +69,7 @@ FirebaseAuth mAuth;
                  mData.put("years",years);
                  mData.put("weight",weight);
                  mData.put("height",height);
+                 mData.put("sex",sex);
 
                  mReference.child("Users").child(mUser.getUid()).setValue(mData)
                          .addOnCompleteListener(Register2.this, new OnCompleteListener<Void>() {

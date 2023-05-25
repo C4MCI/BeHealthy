@@ -165,7 +165,7 @@
             </Space>
 
             <Switch
-                android:id="@+id/sex"
+                android:id="@+id/switchButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center" />

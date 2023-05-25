@@ -17,12 +17,16 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.HashMap;
+
 public class menu extends AppCompatActivity {
     FirebaseAuth mAuth;
-    TextView textView;
+    TextView tV1,tV2,tV3,tV4,tV5;
     Button logOutButton;
     FirebaseUser mUser;
     DatabaseReference mReference;
+    HashMap<String,String> data;
+    UserInfo info;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,14 +36,30 @@ public class menu extends AppCompatActivity {
         mReference = FirebaseDatabase.getInstance().getReference("Users").child(mUser.getUid());
 
         logOutButton = findViewById(R.id.logOutButton);
-        textView = findViewById(R.id.userDetails);
+        tV1 = findViewById(R.id.userDetails);
+        tV2 = findViewById(R.id.userDetails2);
+        tV3 = findViewById(R.id.userDetails3);
+        tV4 = findViewById(R.id.userDetails4);
+        tV5 = findViewById(R.id.userDetails5);
 
+
+        data = new HashMap<>();
         mReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                int i=0;
                 for(DataSnapshot snp : snapshot.getChildren()){
-
+                   data.put(snp.getKey().toString(),snp.getValue().toString());
                 }
+               tV1.setText("name: " + data.get("name"));
+                tV2.setText("weight: " + data.get("weight"));
+                tV3.setText("height: " + data.get("height"));
+                tV4.setText("years: " + data.get("years"));
+                tV5.setText("sex: " + data.get("sex"));
+                info = new UserInfo(data.get("name").toString(),data.get("sex").toString(),
+                        Integer.parseInt(data.get("years").toString()),Integer.parseInt(data.get("weight").toString()),
+                        Integer.parseInt(data.get("height").toString()));
+
             }
 
             @Override
@@ -50,9 +70,8 @@ public class menu extends AppCompatActivity {
         logOutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-                Intent i = new Intent(getApplicationContext(),MainActivity.class);
-                startActivity(i);
+                Intent intent = new Intent(getApplicationContext(),Account.class);
+                startActivity(intent);
                 finish();
             }
         });

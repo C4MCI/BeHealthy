@@ -18,11 +18,14 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.HashMap;
+
 public class logIn extends AppCompatActivity {
     TextInputEditText editTextEmail, editTextPassword;
     Button loginButton;
     ProgressBar progressBar;
     FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

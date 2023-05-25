@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="cılekAdam">Çilek Adam</string>
+    <string name="beHealthy">Be Healthy!</string>
+    <string name="main_logIn_T">Giriş Yap</string>
+    <string name="main_register_T">Kayıt Ol</string>
+    <string name="main_register_E">Sign In</string>
+    <string name="main_logIn_E">Register</string>
 </resources>

@@ -3,6 +3,24 @@
     <string name="beHealthy">Be Healthy!</string>
     <string name="main_logIn_T">Giriş Yap</string>
     <string name="main_register_T">Kayıt Ol</string>
-    <string name="main_register_E">Sign In</string>
-    <string name="main_logIn_E">Register</string>
+    <string name="main_register_E">Register</string>
+    <string name="main_logIn_E">Sign In</string>
+    <string name="register_password_E">Password</string>
+    <string name="register_password_T">Şifre</string>
+    <string name="reg2_enterinfo_E">Enter Your Information</string>
+    <string name="reg2_enterinfo_T">Bilgilerini Gir</string>
+    <string name="reg2_name_E">Name</string>
+    <string name="reg2_name_T">Ad ve Soyad</string>
+    <string name="reg2_years_T">Yaş</string>
+    <string name="reg2_years_E">Years</string>
+    <string name="reg2_weight_T">Kilo</string>
+    <string name="reg2_weight_E">Weight</string>
+    <string name="reg2_height_T">Boy</string>
+    <string name="reg2_height_E">Height</string>
+    <string name="reg2_men_T">Erkek</string>
+    <string name="reg2_men_E">Men</string>
+    <string name="reg2_women_T">Kadın</string>
+    <string name="reg2_women_e">Women</string>
+    <string name="reg2_save_T">Kaydet</string>
+    <string name="reg2_save_E">Save</string>
 </resources>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#A9D9FF"
+    android:background="@color/backgroundcolor"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -71,7 +71,7 @@
                 />
 
             <Switch
-                android:id="@+id/switchMain"
+                android:id="@+id/regSwitch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center" />

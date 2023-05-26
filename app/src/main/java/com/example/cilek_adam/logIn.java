@@ -8,7 +8,10 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ProgressBar;
+import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -26,6 +29,8 @@ public class logIn extends AppCompatActivity {
     ProgressBar progressBar;
     FirebaseAuth mAuth;
 
+    Switch switchB;
+    TextView tV;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +40,22 @@ public class logIn extends AppCompatActivity {
         editTextPassword = findViewById(R.id.password);
         loginButton = findViewById(R.id.loginButton);
         progressBar = findViewById(R.id.loginProgressBar);
+        tV= findViewById(R.id.logTextView);
+        switchB = findViewById(R.id.loginSwitch);
+        switchB.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
+                    editTextPassword.setHint(R.string.register_password_E);
+                    tV.setText(R.string.main_logIn_E);
+                    loginButton.setText(R.string.main_logIn_E);
+                }else{
+                    editTextPassword.setHint(R.string.register_password_T);
+                    tV.setText(R.string.main_logIn_T);
+                    loginButton.setText(R.string.main_logIn_T);
+                }
+            }
+        });
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,16 +76,26 @@ public class logIn extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 progressBar.setVisibility(View.GONE);
                                 if (task.isSuccessful()) {
-                                    Toast.makeText(logIn.this, "Log in Successful.",
-                                            Toast.LENGTH_SHORT).show();
+                                    if (switchB.isChecked()){
+                                        Toast.makeText(logIn.this, "Successfully Log In!",
+                                                Toast.LENGTH_SHORT).show();
+                                    }else{
+                                        Toast.makeText(logIn.this, "Giriş Yapıldı!",
+                                                Toast.LENGTH_SHORT).show();
+                                    }
                                     Intent intent = new Intent(getApplicationContext(), menu.class);
                                     startActivity(intent);
                                     finish();
 
                                 } else {
                                     // If sign in fails, display a message to the user.
-                                    Toast.makeText(logIn.this, "Authentication failed.",
-                                            Toast.LENGTH_SHORT).show();
+                                    if (switchB.isChecked()){
+                                        Toast.makeText(logIn.this, "Authentication Failed!",
+                                                Toast.LENGTH_SHORT).show();
+                                    }else{
+                                        Toast.makeText(logIn.this, "Giriş Yapılamadı!",
+                                                Toast.LENGTH_SHORT).show();
+                                    }
 
                                 }
                             }

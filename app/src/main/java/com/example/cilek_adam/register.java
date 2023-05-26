@@ -9,8 +9,11 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -25,15 +28,33 @@ public class register extends AppCompatActivity {
     Button regButton;
     ProgressBar progressBar;
     FirebaseAuth mAuth;
+    Switch switchB;
+    TextView tV;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register);
         mAuth = FirebaseAuth.getInstance();
+        tV= findViewById(R.id.regTextView);
         editTextEmail = findViewById(R.id.regEmail);
         editTextPassword = findViewById(R.id.regPassword);
         regButton = findViewById(R.id.registerButton);
         progressBar = findViewById(R.id.regProgressBar);
+        switchB = findViewById(R.id.regSwitch);
+        switchB.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
+                    editTextPassword.setHint(R.string.register_password_E);
+                    tV.setText(R.string.main_register_E);
+                    regButton.setText(R.string.main_register_E);
+                }else{
+                    editTextPassword.setHint(R.string.register_password_T);
+                    tV.setText(R.string.main_register_T);
+                    regButton.setText(R.string.main_register_T);
+                }
+            }
+        });
         regButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,16 +76,27 @@ public class register extends AppCompatActivity {
                                 progressBar.setVisibility(View.GONE);
 
                                 if (task.isSuccessful()) {
-                                    Toast.makeText(register.this, "Account created.",
-                                            Toast.LENGTH_SHORT).show();
+                                    if (switchB.isChecked()){
+                                        Toast.makeText(register.this, "Account created!",
+                                                Toast.LENGTH_SHORT).show();
+                                    }else{
+                                        Toast.makeText(register.this, "Hesap Oluşturuldu!",
+                                                Toast.LENGTH_SHORT).show();
+                                    }
+
                                     Intent intent = new Intent(getApplicationContext(),Register2.class);
                                     startActivity(intent);
                                     finish();
 
                                 } else {
                                     // If sign in fails, display a message to the user.
-                                    Toast.makeText(register.this, "Authentication failed.",
-                                            Toast.LENGTH_SHORT).show();
+                                    if (switchB.isChecked()){
+                                        Toast.makeText(register.this, "Authentication Failed!",
+                                                Toast.LENGTH_SHORT).show();
+                                    }else{
+                                        Toast.makeText(register.this, "Hesap Oluşturulamadı!",
+                                                Toast.LENGTH_SHORT).show();
+                                    }
 
                                 }
                             }

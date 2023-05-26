@@ -4,27 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundcolor"
     tools:context=".Register2">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
+        android:gravity="bottom | center"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="0dp">
 
+        <TextView
+            android:id="@+id/reg2TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:fontFamily="@font/baloo"
+            android:gravity="center"
+            android:shadowColor="#000000"
+            android:shadowDx="10"
+            android:shadowDy="10"
+            android:shadowRadius="15"
+            android:text="@string/reg2_enterinfo_T"
+            android:textColor="@color/white"
+            android:textSize="35dp"
+            tools:layout_editor_absoluteX="124dp"
+            tools:layout_editor_absoluteY="125dp"></TextView>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp"></Space>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            >
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/nameText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/baloo"
                 android:padding="15dp"
-                android:text="Ad ve Soyad" />
+                android:shadowColor="#000000"
+                android:shadowDx="10"
+                android:shadowDy="10"
+                android:shadowRadius="15"
+                android:text="@string/reg2_name_T"
+                android:textColor="@color/white" />
 
             <Space
                 android:layout_width="25dp"
@@ -37,7 +64,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Ad ve Soyad" />
+                android:hint="@string/reg2_name_T" />
 
         </LinearLayout>
 
@@ -50,14 +77,21 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            >
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/yearsText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="15dp"
-                android:text="Yaş" />/>
+                android:text="@string/reg2_years_T"
+                android:fontFamily="@font/baloo"
+                android:shadowColor="#000000"
+                android:shadowDx="10"
+                android:shadowDy="10"
+                android:shadowRadius="15"
+                android:textColor="@color/white"/>/>
 
             <Space
                 android:layout_width="25dp"
@@ -71,7 +105,7 @@
                 android:layout_height="wrap_content"
                 android:ems="4"
                 android:inputType="number"
-                android:hint="Yaş"/>
+                android:hint="@string/reg2_years_T"/>
         </LinearLayout>
 
         <Space
@@ -83,14 +117,21 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            >
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/weightText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="15dp"
-                android:text="Kilo" />/>
+                android:text="@string/reg2_weight_T"
+                android:fontFamily="@font/baloo"
+                android:shadowColor="#000000"
+                android:shadowDx="10"
+                android:shadowDy="10"
+                android:shadowRadius="15"
+                android:textColor="@color/white"/>/>
 
             <Space
                 android:layout_width="25dp"
@@ -103,7 +144,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="4"
-                android:hint="Kilo"
+                android:hint="@string/reg2_weight_T"
                 android:inputType="number" />
         </LinearLayout>
 
@@ -116,14 +157,21 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            >
 
             <TextView
-                android:id="@+id/textView7"
+                android:id="@+id/heightText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="15dp"
-                android:text="Boy" />/>
+                android:text="@string/reg2_height_T"
+                android:fontFamily="@font/baloo"
+                android:shadowColor="#000000"
+                android:shadowDx="10"
+                android:shadowDy="10"
+                android:shadowRadius="15"
+                android:textColor="@color/white"/>/>
 
             <Space
                 android:layout_width="25dp"
@@ -137,7 +185,7 @@
                 android:layout_height="wrap_content"
                 android:ems="4"
                 android:inputType="number"
-                android:hint="Boy"/>
+                android:hint="@string/reg2_height_T"/>
         </LinearLayout>
 
         <Space
@@ -153,10 +201,13 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView8"
+                android:id="@+id/menText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Erkek" />
+                android:text="@string/reg2_men_T"
+                android:fontFamily="@font/baloo"
+
+                android:textColor="@color/white"/>
 
             <Space
                 android:layout_width="25dp"
@@ -165,7 +216,7 @@
             </Space>
 
             <Switch
-                android:id="@+id/switchButton"
+                android:id="@+id/reg2Switch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center" />
@@ -177,10 +228,12 @@
             </Space>
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/womenText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Kadın" />
+                android:text="@string/reg2_women_T"
+                android:fontFamily="@font/baloo"
+                android:textColor="@color/white"/>
         </LinearLayout>
         <Space
             android:layout_width="match_parent"
@@ -191,7 +244,44 @@
             android:id="@+id/saveButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Kaydet" />
+            android:text="@string/reg2_save_T" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="150dp"></Space>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            >
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:srcCompat="@mipmap/tr_round"
+                />
+
+            <Switch
+                android:id="@+id/reg2_1_Switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:srcCompat="@mipmap/ic_launcher_round"
+                />
+
+        </LinearLayout>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp"></Space>
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

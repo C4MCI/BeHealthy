@@ -18,7 +18,7 @@ Switch switchB;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        switchB = findViewById(R.id.switchMain);
+        switchB = findViewById(R.id.regSwitch);
 
          b1 =findViewById(R.id.button);
 

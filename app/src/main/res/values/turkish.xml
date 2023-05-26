@@ -23,4 +23,6 @@
     <string name="reg2_women_e">Women</string>
     <string name="reg2_save_T">Kaydet</string>
     <string name="reg2_save_E">Save</string>
+    <string name="menu_b1_T">Spor</string>
+    <string name="menu_b1_E">Sports</string>
 </resources>

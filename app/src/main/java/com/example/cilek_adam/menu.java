@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -23,6 +24,7 @@ public class menu extends AppCompatActivity {
     FirebaseAuth mAuth;
     TextView tV1,tV2,tV3,tV4,tV5;
     Button logOutButton;
+    ImageButton history;
     FirebaseUser mUser;
     DatabaseReference mReference;
     HashMap<String,String> data;
@@ -36,6 +38,7 @@ public class menu extends AppCompatActivity {
         mReference = FirebaseDatabase.getInstance().getReference("Users").child(mUser.getUid());
 
         logOutButton = findViewById(R.id.logOutButton);
+        history = findViewById(R.id.imageButton);
 
         data = new HashMap<>();
         mReference.addValueEventListener(new ValueEventListener() {
@@ -60,6 +63,14 @@ public class menu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Account.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        history.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),logIn.class);
                 startActivity(intent);
                 finish();
             }

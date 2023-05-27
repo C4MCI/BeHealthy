@@ -67,7 +67,6 @@ public class menu extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Account.class);
                 startActivity(intent);
-                finish();
             }
         });
 
@@ -76,7 +75,6 @@ public class menu extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),UpdateInfo.class);
                 startActivity(intent);
-                finish();
             }
         });
     }

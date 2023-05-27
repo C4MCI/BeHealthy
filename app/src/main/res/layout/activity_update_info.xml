@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundcolor"
-    tools:context=".Register2">
+    tools:context=".UpdateInfo">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,7 +16,7 @@
         tools:layout_editor_absoluteY="0dp">
 
         <TextView
-            android:id="@+id/reg2TextView"
+            android:id="@+id/updateTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
@@ -26,7 +26,7 @@
             android:shadowDx="10"
             android:shadowDy="10"
             android:shadowRadius="15"
-            android:text="@string/reg2_enterinfo_T"
+            android:text="@string/update_updateInfo_T"
             android:textColor="@color/white"
             android:textSize="35dp"
             tools:layout_editor_absoluteX="124dp"
@@ -34,39 +34,7 @@
         <Space
             android:layout_width="match_parent"
             android:layout_height="20dp"></Space>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
 
-            <TextView
-                android:id="@+id/nameText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/baloo"
-                android:padding="15dp"
-                android:shadowColor="#000000"
-                android:shadowDx="10"
-                android:shadowDy="10"
-                android:shadowRadius="15"
-                android:text="@string/reg2_name_T"
-                android:textColor="@color/white" />
-
-            <Space
-                android:layout_width="25dp"
-                android:layout_height="match_parent">
-
-            </Space>
-
-            <EditText
-                android:id="@+id/nameEditText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/reg2_name_T" />
-
-        </LinearLayout>
 
         <Space
             android:layout_width="match_parent"
@@ -81,7 +49,7 @@
             >
 
             <TextView
-                android:id="@+id/yearsText"
+                android:id="@+id/updateYearsText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="15dp"
@@ -100,7 +68,7 @@
             </Space>
 
             <EditText
-                android:id="@+id/yearsEditText"
+                android:id="@+id/updateYearsEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="4"
@@ -121,7 +89,7 @@
             >
 
             <TextView
-                android:id="@+id/weightText"
+                android:id="@+id/updateWeightText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="15dp"
@@ -140,7 +108,7 @@
             </Space>
 
             <EditText
-                android:id="@+id/weightEditText"
+                android:id="@+id/updateWeightEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="4"
@@ -161,7 +129,7 @@
             >
 
             <TextView
-                android:id="@+id/heightText"
+                android:id="@+id/updateHeightText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="15dp"
@@ -180,7 +148,7 @@
             </Space>
 
             <EditText
-                android:id="@+id/heightEditText"
+                android:id="@+id/updateHeightEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="4"
@@ -194,57 +162,12 @@
 
         </Space>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/menText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/reg2_men_T"
-                android:fontFamily="@font/baloo"
-
-                android:textColor="@color/white"/>
-
-            <Space
-                android:layout_width="25dp"
-                android:layout_height="match_parent">
-
-            </Space>
-
-            <Switch
-                android:id="@+id/reg2Switch"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center" />
-
-            <Space
-                android:layout_width="25dp"
-                android:layout_height="match_parent">
-
-            </Space>
-
-            <TextView
-                android:id="@+id/womenText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/reg2_women_T"
-                android:fontFamily="@font/baloo"
-                android:textColor="@color/white"/>
-        </LinearLayout>
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="20dp">
-
-        </Space>
         <Button
             android:id="@+id/updateButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/reg2_save_T" />
+            android:text="@string/update_update_T" />
 
         <Space
             android:layout_width="match_parent"

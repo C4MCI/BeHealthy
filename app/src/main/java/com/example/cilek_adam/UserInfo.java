@@ -1,8 +1,9 @@
 package com.example.cilek_adam;
 
 public class UserInfo {
-    public static String name,sex;
+    public static String name,sex,bmiRateValue;
     public static int years,weight,height, calorie_taken = 0, calorie_burn = 0;
+    public static double bmi;
 
     UserInfo(String n, String s, int y,int w, int h){
         name = n;
@@ -10,6 +11,8 @@ public class UserInfo {
         years = y;
         weight = w;
         height = h;
+        bmi = bmiCalculate(h,w);
+        bmiRateValue = bmiRate(bmi);
     }
     UserInfo(){}
     public String getName(){
@@ -52,5 +55,35 @@ public class UserInfo {
     public int getCalorie_burn(){
         return calorie_burn;
     }
-
+    public double getBMI(){return bmi;}
+    public String getBmiRate(){return bmiRateValue;}
+    public String getBmiRateTR(){
+        if(bmi<=18){
+            return "Az Kilolu";
+        }else if (bmi<=25){
+            return "Normal Kilolu";
+        } else if(bmi<=35){
+            return "Çok Kilolu";
+        } else{
+            return "Obez";
+        }
+    }
+    public String getBMIString(){return String.format("%.0f",bmi);}
+    public double bmiCalculate(int h,int w){
+        double bm;
+        double he = (double) h/100.0;
+        bm = ((double) w/(he*he));
+        return bm;
+    }
+    public String bmiRate(double bm){
+        if(bm<=18){
+            return "Underweight";
+        }else if (bm<=25){
+            return "Normal Weight";
+        } else if(bm<=35){
+            return "Overweight";
+        } else{
+            return "Obesity";
+        }
+    }
 }

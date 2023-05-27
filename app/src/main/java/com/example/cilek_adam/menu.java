@@ -24,7 +24,7 @@ public class menu extends AppCompatActivity {
     FirebaseAuth mAuth;
     TextView tV1,tV2,tV3,tV4,tV5;
     Button logOutButton;
-    ImageButton history;
+    ImageButton history,update;
     FirebaseUser mUser;
     DatabaseReference mReference;
     HashMap<String,String> data;
@@ -36,7 +36,7 @@ public class menu extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
         mReference = FirebaseDatabase.getInstance().getReference("Users").child(mUser.getUid());
-
+        update = findViewById(R.id.imageButton8);
         logOutButton = findViewById(R.id.logOutButton);
         history = findViewById(R.id.imageButton);
 
@@ -71,6 +71,14 @@ public class menu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(),logIn.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),UpdateInfo.class);
                 startActivity(intent);
                 finish();
             }

@@ -44,7 +44,7 @@ FirebaseAuth mAuth;
         yearsET = findViewById(R.id.yearsEditText);
         weightET = findViewById(R.id.weightEditText);
         heightET = findViewById(R.id.heightEditText);
-        saveB = findViewById(R.id.saveButton);
+        saveB = findViewById(R.id.updateButton);
         sexS = findViewById(R.id.reg2Switch);
         nameTV = findViewById(R.id.nameText);
         yearsTV = findViewById(R.id.yearsText);
@@ -53,7 +53,7 @@ FirebaseAuth mAuth;
         menTV = findViewById(R.id.menText);
         womenTV = findViewById(R.id.womenText);
         reg2TV = findViewById(R.id.reg2TextView);
-        langS = findViewById(R.id.reg2_1_Switch);
+        langS = findViewById(R.id.accountSwitch);
         langS.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {

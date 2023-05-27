@@ -36,5 +36,23 @@
     <string name="account_email">Email</string>
     <string name="account_sex_E">Sex</string>
     <string name="account_sex_T">Cinsiyet</string>
+    <string name="menu_daily_E">Daily Report</string>
+    <string name="menu_daily_T">Günlük Özet</string>
+    <string name="menu_account_E">Account</string>
+    <string name="menu_account_T">Hesabım</string>
+    <string name="menu_calorie_E">Calorie</string>
+    <string name="menu_calorie_T">Kalori Takip</string>
+    <string name="menu_recipes_E">Recipes</string>
+    <string name="menu_recipes_T">Yemek Tarifleri</string>
+    <string name="menu_sports_E">Sports</string>
+    <string name="menu_sports_T">Spor</string>
+    <string name="menu_water_E">Water</string>
+    <string name="menu_water_T">Su Takibi</string>
+    <string name="menu_weight_E">Weight</string>
+    <string name="menu_weight_T">Agirlik TBD</string>
+    <string name="menu_update_E">Update Info</string>
+    <string name="menu_update_T">Bilgileri Güncelle</string>
+    <string name="menu_health_E">Health</string>
+    <string name="menu_health_T">Sağlık TBD</string>
 
 </resources>

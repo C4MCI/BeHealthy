@@ -5,99 +5,9 @@
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundcolor"
     android:gravity="center"
     tools:context=".menu">
-
-    <Button
-        android:id="@+id/logOutButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="Account"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars"
-        android:contentDescription="daily_summary" />
-
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/baloo"
-        android:text="@string/menu_b1_T"
-        app:layout_constraintEnd_toEndOf="@+id/imageButton"
-        app:layout_constraintStart_toStartOf="@+id/imageButton"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/baloo"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/imageButton2"
-        app:layout_constraintStart_toStartOf="@+id/imageButton2"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
-
-    <ImageButton
-        android:id="@+id/imageButton8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <ImageButton
-        android:id="@+id/imageButton9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/baloo"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/imageButton8"
-        app:layout_constraintStart_toStartOf="@+id/imageButton8"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton8" />
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/baloo"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/imageButton9"
-        app:layout_constraintStart_toStartOf="@+id/imageButton9"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton9" />
 
 
     <LinearLayout
@@ -127,4 +37,195 @@
             app:srcCompat="@mipmap/eng" />
 
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/menu_accountButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
+        android:background="@drawable/roundcorner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/account_icon_foreground" />
+
+    <ImageButton
+        android:id="@+id/menu_calorieButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/roundcorner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/calorie_icon_foreground" />
+
+    <ImageButton
+        android:id="@+id/menu_dailyButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:background="@drawable/roundcorner"
+        app:layout_constraintEnd_toStartOf="@+id/menu_calorieButton"
+        app:layout_constraintStart_toEndOf="@+id/menu_accountButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/daily_icon_foreground" />
+
+    <TextView
+        android:id="@+id/menu_accountText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/baloo"
+        android:text="@string/menu_account_T"
+        app:layout_constraintEnd_toEndOf="@+id/menu_accountButton"
+        app:layout_constraintStart_toStartOf="@+id/menu_accountButton"
+        app:layout_constraintTop_toBottomOf="@+id/menu_accountButton" />
+
+    <TextView
+        android:id="@+id/menu_dailyText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/baloo"
+        android:text="@string/menu_daily_E"
+        app:layout_constraintEnd_toEndOf="@+id/menu_dailyButton"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="@+id/menu_dailyButton"
+        app:layout_constraintTop_toBottomOf="@+id/menu_dailyButton" />
+
+    <TextView
+        android:id="@+id/menu_calorieText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/baloo"
+        android:text="@string/menu_calorie_E"
+        app:layout_constraintEnd_toEndOf="@+id/menu_calorieButton"
+        app:layout_constraintStart_toStartOf="@+id/menu_calorieButton"
+        app:layout_constraintTop_toBottomOf="@+id/menu_calorieButton" />
+
+    <ImageButton
+        android:id="@+id/menu_recipesButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/roundcorner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/menu_accountText"
+        app:srcCompat="@mipmap/recipes_icon_foreground" />
+
+    <ImageButton
+        android:id="@+id/menu_sportsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/roundcorner"
+        app:layout_constraintEnd_toStartOf="@+id/menu_waterButton"
+        app:layout_constraintStart_toEndOf="@+id/menu_recipesButton"
+        app:layout_constraintTop_toBottomOf="@+id/menu_dailyText"
+        app:srcCompat="@mipmap/sport_icon_foreground" />
+
+    <ImageButton
+        android:id="@+id/menu_waterButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/roundcorner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/menu_calorieText"
+        app:srcCompat="@mipmap/water_icon_foreground" />
+
+    <TextView
+        android:id="@+id/menu_recipesText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/baloo"
+        android:text="@string/menu_recipes_T"
+        app:layout_constraintEnd_toEndOf="@+id/menu_recipesButton"
+        app:layout_constraintStart_toStartOf="@+id/menu_recipesButton"
+        app:layout_constraintTop_toBottomOf="@+id/menu_recipesButton" />
+
+    <TextView
+        android:id="@+id/menu_sportsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/baloo"
+        android:text="@string/menu_sports_T"
+        app:layout_constraintEnd_toEndOf="@+id/menu_sportsButton"
+        app:layout_constraintStart_toStartOf="@+id/menu_sportsButton"
+        app:layout_constraintTop_toBottomOf="@+id/menu_sportsButton" />
+
+    <TextView
+        android:id="@+id/menu_waterText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/baloo"
+        android:text="@string/menu_water_T"
+        app:layout_constraintEnd_toEndOf="@+id/menu_waterButton"
+        app:layout_constraintStart_toStartOf="@+id/menu_waterButton"
+        app:layout_constraintTop_toBottomOf="@+id/menu_waterButton" />
+
+    <ImageButton
+        android:id="@+id/menu_weightButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/roundcorner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/menu_recipesText"
+        app:srcCompat="@mipmap/weight_icon_foreground" />
+
+    <ImageButton
+        android:id="@+id/menu_updateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/roundcorner"
+        app:layout_constraintEnd_toStartOf="@+id/menu_healthButton"
+        app:layout_constraintStart_toEndOf="@+id/menu_weightButton"
+        app:layout_constraintTop_toBottomOf="@+id/menu_sportsText"
+        app:srcCompat="@mipmap/update_icon_foreground" />
+
+    <ImageButton
+        android:id="@+id/menu_healthButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/roundcorner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/menu_waterText"
+        app:srcCompat="@mipmap/health_icon_foreground" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/baloo"
+        android:text="@string/menu_weight_T"
+        app:layout_constraintEnd_toEndOf="@+id/menu_weightButton"
+        app:layout_constraintStart_toStartOf="@+id/menu_weightButton"
+        app:layout_constraintTop_toBottomOf="@+id/menu_weightButton" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/baloo"
+        android:text="@string/menu_update_T"
+        app:layout_constraintEnd_toEndOf="@+id/menu_updateButton"
+        app:layout_constraintStart_toStartOf="@+id/menu_updateButton"
+        app:layout_constraintTop_toBottomOf="@+id/menu_updateButton" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/baloo"
+        android:text="@string/menu_health_T"
+        app:layout_constraintEnd_toEndOf="@+id/menu_healthButton"
+        app:layout_constraintStart_toStartOf="@+id/menu_healthButton"
+        app:layout_constraintTop_toBottomOf="@+id/menu_healthButton" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

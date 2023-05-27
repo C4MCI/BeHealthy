@@ -25,7 +25,7 @@
             app:srcCompat="@mipmap/tr_round" />
 
         <Switch
-            android:id="@+id/menu_Switch"
+            android:id="@+id/menuSwitch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center" />
@@ -86,7 +86,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/baloo"
-        android:text="@string/menu_daily_E"
+        android:text="@string/menu_daily_T"
         app:layout_constraintEnd_toEndOf="@+id/menu_dailyButton"
         app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="@+id/menu_dailyButton"
@@ -97,7 +97,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/baloo"
-        android:text="@string/menu_calorie_E"
+        android:text="@string/menu_calorie_T"
         app:layout_constraintEnd_toEndOf="@+id/menu_calorieButton"
         app:layout_constraintStart_toStartOf="@+id/menu_calorieButton"
         app:layout_constraintTop_toBottomOf="@+id/menu_calorieButton" />
@@ -199,7 +199,7 @@
         app:srcCompat="@mipmap/health_icon_foreground" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/menu_weightText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/baloo"
@@ -209,7 +209,7 @@
         app:layout_constraintTop_toBottomOf="@+id/menu_weightButton" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/menu_updateText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/baloo"
@@ -219,7 +219,7 @@
         app:layout_constraintTop_toBottomOf="@+id/menu_updateButton" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/menu_healthText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/baloo"

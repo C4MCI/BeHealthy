@@ -9,7 +9,9 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,12 +26,15 @@ import java.util.HashMap;
 
 public class menu extends AppCompatActivity {
     FirebaseAuth mAuth;
-    TextView tV1,tV2,tV3,tV4,tV5;
+    TextView accountText, dailyText, calorieText, recipesText, sportsText, waterText, weightText,
+             updateText, healthText;
     ImageButton accountButton, update;
     FirebaseUser mUser;
     DatabaseReference mReference;
     HashMap<String,String> data;
     UserInfo info;
+
+    Switch menuSwitch;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +47,16 @@ public class menu extends AppCompatActivity {
         mReference = FirebaseDatabase.getInstance().getReference("Users").child(mUser.getUid());
         update = findViewById(R.id.menu_updateButton);
         accountButton = findViewById(R.id.menu_accountButton);
+        menuSwitch = findViewById(R.id.menuSwitch);
+        accountText = findViewById(R.id.menu_accountText);
+        dailyText = findViewById(R.id.menu_dailyText);
+        calorieText = findViewById(R.id.menu_calorieText);
+        recipesText = findViewById(R.id.menu_recipesText);
+        sportsText = findViewById(R.id.menu_sportsText);
+        waterText = findViewById(R.id.menu_waterText);
+        weightText = findViewById(R.id.menu_weightText);
+        updateText = findViewById(R.id.menu_updateText);
+        healthText = findViewById(R.id.menu_healthText);
 
         data = new HashMap<>();
         mReference.addValueEventListener(new ValueEventListener() {
@@ -75,6 +90,33 @@ public class menu extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),UpdateInfo.class);
                 startActivity(intent);
+            }
+        });
+
+        menuSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (isChecked) {
+                    accountText.setText(R.string.menu_account_E);
+                    dailyText.setText(R.string.menu_daily_E);
+                    calorieText.setText(R.string.menu_calorie_E);
+                    recipesText.setText(R.string.menu_recipes_E);
+                    sportsText.setText(R.string.menu_sports_E);
+                    waterText.setText(R.string.menu_water_E);
+                    weightText.setText(R.string.menu_weight_E);
+                    updateText.setText(R.string.menu_update_E);
+                    healthText.setText(R.string.menu_health_E);
+                } else {
+                    accountText.setText(R.string.menu_account_T);
+                    dailyText.setText(R.string.menu_daily_T);
+                    calorieText.setText(R.string.menu_calorie_T);
+                    recipesText.setText(R.string.menu_recipes_T);
+                    sportsText.setText(R.string.menu_sports_T);
+                    waterText.setText(R.string.menu_water_T);
+                    weightText.setText(R.string.menu_weight_T);
+                    updateText.setText(R.string.menu_update_T);
+                    healthText.setText(R.string.menu_health_T);
+                }
             }
         });
     }

@@ -11,7 +11,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Material3.Light.NoActionBar"
+        android:theme="@style/Theme.Material3.Light"
         tools:targetApi="31">
         <activity
             android:name=".UpdateInfo"
@@ -28,15 +28,15 @@
         <activity
             android:name=".register"
             android:exported="false"
-            android:theme="@style/Theme.Material3.Light.NoActionBar" />
+            android:theme="@style/Theme.Material3.Light" />
         <activity
             android:name=".logIn"
             android:exported="false"
-            android:theme="@style/Theme.Material3.Light.NoActionBar" />
+            android:theme="@style/Theme.Material3.Light" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.Material3.Light.NoActionBar">
+            android:theme="@style/Theme.Material3.Light">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

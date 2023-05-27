@@ -4,8 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -34,6 +36,9 @@ DatabaseReference mReference;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_info);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.barColor)));
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
         mReference = FirebaseDatabase.getInstance().getReference("Users").child(mUser.getUid());
@@ -131,5 +136,18 @@ DatabaseReference mReference;
 
 
 
+    }
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == android.R.id.home) {
+            // Geri düğmesine basıldığında yapılacak işlemler
+            // Burada belirli bir aktiviteye yönlendirebilirsiniz
+            Intent intent = new Intent(this, menu.class);
+            startActivity(intent);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

@@ -54,5 +54,19 @@
     <string name="menu_update_T">Bilgileri Güncelle</string>
     <string name="menu_health_E">Health</string>
     <string name="menu_health_T">Sağlık TBD</string>
+    <string name="calorie_header_E">Calorie</string>
+    <string name="calorie_header_T">Kalori Takip</string>
+    <string name="calorie_text_E">Please input your daily calorie consumption in kcal form.\n
+        (1 kcal = 4184 Joule)</string>
+    <string name="calorie_text_T">Lütfen gün içerisinde aldığınız kalori miktarını kcal cinsinden giriniz. (1 kcal = 4184 Joule)</string>
+    <string name="calorie_morningText_E">Morning</string>
+    <string name="calorie_morningText_T">Sabah</string>
+    <string name="calorie_noonText_E">Noon</string>
+    <string name="calorie_noonText_T">Öğle</string>
+    <string name="calorie_eveningText_E">Evening</string>
+    <string name="calorie_eveningText_T">Akşam</string>
+    <string name="calorie_saveButton_E">Save</string>
+    <string name="calorie_saveButton_T">Kaydet</string>
+
 
 </resources>

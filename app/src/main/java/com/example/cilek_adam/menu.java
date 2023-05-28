@@ -8,7 +8,6 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.Switch;
@@ -28,7 +27,7 @@ public class menu extends AppCompatActivity {
     FirebaseAuth mAuth;
     TextView accountText, dailyText, calorieText, recipesText, sportsText, waterText, weightText,
              updateText, healthText;
-    ImageButton accountButton, update;
+    ImageButton accountButton, updateButton, calorieButton;
     FirebaseUser mUser;
     DatabaseReference mReference;
     HashMap<String,String> data;
@@ -45,8 +44,9 @@ public class menu extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
         mReference = FirebaseDatabase.getInstance().getReference("Users").child(mUser.getUid());
-        update = findViewById(R.id.menu_updateButton);
+        updateButton = findViewById(R.id.menu_updateButton);
         accountButton = findViewById(R.id.menu_accountButton);
+        calorieButton = findViewById(R.id.menu_calorieButton);
         menuSwitch = findViewById(R.id.menuSwitch);
         accountText = findViewById(R.id.menu_accountText);
         dailyText = findViewById(R.id.menu_dailyText);
@@ -85,10 +85,18 @@ public class menu extends AppCompatActivity {
             }
         });
 
-        update.setOnClickListener(new View.OnClickListener() {
+        updateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),UpdateInfo.class);
+                startActivity(intent);
+            }
+        });
+
+        calorieButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),Calorie.class);
                 startActivity(intent);
             }
         });

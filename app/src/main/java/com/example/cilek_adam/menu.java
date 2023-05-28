@@ -27,7 +27,7 @@ public class menu extends AppCompatActivity {
     FirebaseAuth mAuth;
     TextView accountText, dailyText, calorieText, recipesText, sportsText, waterText, weightText,
              updateText, healthText;
-    ImageButton accountButton, updateButton, calorieButton;
+    ImageButton accountButton, updateButton, calorieButton, dailyButton;
     FirebaseUser mUser;
     DatabaseReference mReference;
     HashMap<String,String> data;
@@ -47,6 +47,7 @@ public class menu extends AppCompatActivity {
         updateButton = findViewById(R.id.menu_updateButton);
         accountButton = findViewById(R.id.menu_accountButton);
         calorieButton = findViewById(R.id.menu_calorieButton);
+        dailyButton = findViewById(R.id.menu_dailyButton);
         menuSwitch = findViewById(R.id.menuSwitch);
         accountText = findViewById(R.id.menu_accountText);
         dailyText = findViewById(R.id.menu_dailyText);
@@ -97,6 +98,14 @@ public class menu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Calorie.class);
+                startActivity(intent);
+            }
+        });
+
+        dailyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),DailyReport.class);
                 startActivity(intent);
             }
         });

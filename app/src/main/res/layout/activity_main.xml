@@ -71,7 +71,7 @@
                 />
 
             <Switch
-                android:id="@+id/regSwitch"
+                android:id="@+id/fatSwitch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center" />

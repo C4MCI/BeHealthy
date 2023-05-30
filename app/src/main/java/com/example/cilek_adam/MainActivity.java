@@ -20,7 +20,7 @@ Switch switchB;
         setContentView(R.layout.activity_main);
         getSupportActionBar().setTitle("");
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.barColor)));
-        switchB = findViewById(R.id.regSwitch);
+        switchB = findViewById(R.id.fatSwitch);
 
          b1 =findViewById(R.id.button);
 

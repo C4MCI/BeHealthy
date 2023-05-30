@@ -8,6 +8,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.Switch;
@@ -27,7 +28,7 @@ public class menu extends AppCompatActivity {
     FirebaseAuth mAuth;
     TextView accountText, dailyText, calorieText, recipesText, sportsText, waterText, weightText,
              updateText, healthText;
-    ImageButton accountButton, updateButton, calorieButton, dailyButton;
+    ImageButton accountButton, updateButton, calorieButton, dailyButton,weightButton;
     FirebaseUser mUser;
     DatabaseReference mReference;
     HashMap<String,String> data;
@@ -58,6 +59,7 @@ public class menu extends AppCompatActivity {
         weightText = findViewById(R.id.menu_weightText);
         updateText = findViewById(R.id.menu_updateText);
         healthText = findViewById(R.id.menu_healthText);
+        weightButton = findViewById(R.id.menu_weightButton);
 
         data = new HashMap<>();
         mReference.addValueEventListener(new ValueEventListener() {
@@ -78,6 +80,7 @@ public class menu extends AppCompatActivity {
 
             }
         });
+
         accountButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -134,6 +137,14 @@ public class menu extends AppCompatActivity {
                     updateText.setText(R.string.menu_update_T);
                     healthText.setText(R.string.menu_health_T);
                 }
+            }
+        });
+        weightButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),MuscleAndFat.class);
+                startActivity(intent);
+                finish();
             }
         });
     }

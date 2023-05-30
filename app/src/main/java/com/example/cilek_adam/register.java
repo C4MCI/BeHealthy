@@ -7,12 +7,10 @@ import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
-import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -23,7 +21,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class register extends AppCompatActivity {
     TextInputEditText editTextEmail, editTextPassword;
@@ -45,7 +42,7 @@ public class register extends AppCompatActivity {
         editTextPassword = findViewById(R.id.regPassword);
         regButton = findViewById(R.id.registerButton);
         progressBar = findViewById(R.id.regProgressBar);
-        switchB = findViewById(R.id.regSwitch);
+        switchB = findViewById(R.id.fatSwitch);
         switchB.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {

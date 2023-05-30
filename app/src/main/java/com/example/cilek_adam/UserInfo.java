@@ -65,7 +65,7 @@ public class UserInfo {
         } else if(bmi<=35){
             return "Çok Kilolu";
         } else{
-            return "bez";
+            return "Obez";
         }
     }
     public String getBMIString(){return String.format("%.0f",bmi);}

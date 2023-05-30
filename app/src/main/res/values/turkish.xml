@@ -97,4 +97,30 @@
     <string name="fat_fatratio_T">Yağ Oranı:</string>
     <string name="fat_fatmass_E">Fat Mass:</string>
     <string name="fat_fatmass_T">Yağ Kütlesi:</string>
+
+
+    <string-array name="sports_spinner_T">
+        <item>Yürüyüş</item>
+        <item>Tempolu Koşu</item>
+        <item>Bisiklet</item>
+        <item>Yüzme</item>
+        <item>Basketbol</item>
+        <item>İp Atlama</item>
+        <item>Jimnastik</item>
+    </string-array>
+    <string-array name="sports_spinner_E">
+        <item>Walking</item>
+        <item>Jogging</item>
+        <item>Cycling</item>
+        <item>Swimming</item>
+        <item>Basketball</item>
+        <item>Jump Rope</item>
+        <item>Gymnastics</item>
+    </string-array>
+    <string name="sports_header_E">Sports</string>
+    <string name="sports_header_T">Spor</string>
+    <string name="sports_descriptionText_E">Please select the type of sport you do and how many minutes you work out.</string>
+    <string name="sports_descriptionText_T">Lütfen yaptığınız sporu seçiniz ve\n kaç dakika çalıştığınızı giriniz.</string>
+    <string name="sports_saveButton_E">Save</string>
+    <string name="sports_saveButton_T">Kaydet</string>
 </resources>

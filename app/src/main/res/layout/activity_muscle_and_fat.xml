@@ -33,7 +33,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="100dp" />
+            android:layout_height="50dp" />
 
 
         <LinearLayout
@@ -144,11 +144,12 @@
         <Space
             android:layout_width="match_parent"
             android:layout_height="50dp"></Space>
+
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
+            android:gravity="center"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/fatRatioTextView1"
@@ -156,12 +157,12 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="@font/baloo"
-                android:gravity="left"
+                android:gravity="right"
                 android:shadowColor="#000000"
                 android:shadowDx="10"
                 android:shadowDy="10"
                 android:shadowRadius="15"
-                android:text="Yağ Oranı: "
+                android:text="Yağ Oranı:"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="40dp"
@@ -169,10 +170,11 @@
 
             <TextView
                 android:id="@+id/fatRatioTextView2"
-                android:layout_width="wrap_content"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/baloo"
-                android:gravity="left"
+                android:gravity="center
+"
                 android:shadowColor="#000000"
                 android:shadowDx="10"
                 android:shadowDy="10"
@@ -185,9 +187,10 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:gravity="center"
             >
 
             <TextView
@@ -196,7 +199,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="@font/baloo"
-                android:gravity="left"
+                android:gravity="right"
                 android:shadowColor="#000000"
                 android:shadowDx="10"
                 android:shadowDy="10"
@@ -209,10 +212,10 @@
 
             <TextView
                 android:id="@+id/yagKgTV2"
-                android:layout_width="wrap_content"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/baloo"
-                android:gravity="left"
+                android:gravity="center"
                 android:shadowColor="#000000"
                 android:shadowDx="10"
                 android:shadowDy="10"

@@ -2,9 +2,14 @@ package com.example.cilek_adam;
 
 import androidx.appcompat.app.AppCompatActivity;
 import java.lang.Math;
+
+import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -13,15 +18,17 @@ public class MuscleAndFat extends AppCompatActivity {
 TextView fatTV,belTV,boyunTV,fatRatioTV1,fatRatioTV2,kalcaTV,yagKGTV1,yagKGTV2;
 Button calculateFat;
 Switch fatS;
-double fat;
+double fat,fatkg;
+UserInfo info;
 EditText belET,boyunET,kalcaET;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_muscle_and_fat);
-        UserInfo info = new UserInfo();
-        int bel,boyun;
-
+        info = new UserInfo();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.barColor)));
         fatTV=findViewById(R.id.fatTextView);
         belTV = findViewById(R.id.belTextView);
         boyunTV = findViewById(R.id.boyunTextView);
@@ -36,25 +43,72 @@ EditText belET,boyunET,kalcaET;
         yagKGTV1 = findViewById(R.id.yagKgTV1);
         yagKGTV2 = findViewById(R.id.yagKgTV2);
 
+        fatTV.setText(R.string.fat_calculatefatratio_T);
+        belTV.setText(R.string.fat_waistsize_T);
+        boyunTV.setText(R.string.fat_necksize_T);
+        kalcaTV.setText(R.string.fat_hipsize_T);
+        calculateFat.setText(R.string.fat_calculatefatratio_T);
+        fatRatioTV1.setText(R.string.fat_fatratio_T);
+        yagKGTV1.setText(R.string.fat_fatmass_T);
+        fatS.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    fatTV.setText(R.string.fat_calculatefatratio_E);
+                    belTV.setText(R.string.fat_waistsize_E);
+                    boyunTV.setText(R.string.fat_necksize_E);
+                    kalcaTV.setText(R.string.fat_hipsıze_E);
+                    calculateFat.setText(R.string.fat_calculatefatratio_E);
+                    fatRatioTV1.setText(R.string.fat_fatratio_E);
+                    yagKGTV1.setText(R.string.fat_fatmass_E);
+                }else{
+                    fatTV.setText(R.string.fat_calculatefatratio_T);
+                    belTV.setText(R.string.fat_waistsize_T);
+                    boyunTV.setText(R.string.fat_necksize_T);
+                    kalcaTV.setText(R.string.fat_hipsize_T);
+                    calculateFat.setText(R.string.fat_calculatefatratio_T);
+                    fatRatioTV1.setText(R.string.fat_fatratio_T);
+                    yagKGTV1.setText(R.string.fat_fatmass_T);
+                }
+            }
+        });
 
         calculateFat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               int bel = Integer.parseInt( belET.getText().toString());
-                int boyun = Integer.parseInt( boyunET.getText().toString());
+               double   bel = Double.parseDouble(belET.getText().toString());
+               double boyun = Double.parseDouble(boyunET.getText().toString());
+               double kalca = Double.parseDouble(kalcaET.getText().toString());
                 if (info.getSex().equals("Men")){
-                    fat = (495.0 / (1.0324-(0.19077*Math.log10(bel-boyun))+(0.15456*Math.log10(info.getHeight()))))-450;
-                    fatRatioTV2.setText(String.format("%.2f",fat));
+                    fat = ((495.0 / (1.0324-(0.19077*(double)Math.log10(bel-boyun))+(0.15456*(double) Math.log10((double) info.getHeight()))))-450.0);
+                    fatRatioTV2.setText("%"+String.format("%.1f",fat));
+                    fatkg = info.getWeight()*fat/100.0;
+                    yagKGTV2.setText(String.format("%.0f",fatkg)+" Kg");
 
 
                 }else if (info.getSex().equals("Women")){
-
-
+                    fat = ((495/(1.29579-(0.35004*(double) Math.log10(bel+kalca-boyun))+(0.22100*(double) Math.log10(info.getHeight()))))-450.0);
+                    fatRatioTV2.setText("%"+String.format("%.1f",fat));
+                    fatkg = info.getWeight()*fat/100.0;
+                    yagKGTV2.setText(String.format("%.0f",fatkg)+" Kg");
                 }
 
             }
         });
 
 
+    }
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == android.R.id.home) {
+            // Geri düğmesine basıldığında yapılacak işlemler
+            // Burada belirli bir aktiviteye yönlendirebilirsiniz
+            Intent intent = new Intent(this, menu.class);
+            startActivity(intent);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

@@ -22,6 +22,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Calendar;
 import java.util.HashMap;
 
 public class menu extends AppCompatActivity {
@@ -35,6 +36,7 @@ public class menu extends AppCompatActivity {
     UserInfo info;
 
     Switch menuSwitch;
+    int taken = 0,burned = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +47,24 @@ public class menu extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
         mReference = FirebaseDatabase.getInstance().getReference("Users").child(mUser.getUid());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         updateButton = findViewById(R.id.menu_updateButton);
         accountButton = findViewById(R.id.menu_accountButton);
         calorieButton = findViewById(R.id.menu_calorieButton);
@@ -62,17 +82,31 @@ public class menu extends AppCompatActivity {
         healthText = findViewById(R.id.menu_healthText);
         weightButton = findViewById(R.id.menu_weightButton);
 
-        data = new HashMap<>();
+
+
+
+
+        Calendar simdikiZaman = Calendar.getInstance();
+        int yil = simdikiZaman.get(Calendar.YEAR);
+        int ay = simdikiZaman.get(Calendar.MONTH) + 1; // Ay başlangıcı 0'dan başladığı için 1 eklenir
+        int gun = simdikiZaman.get(Calendar.DAY_OF_MONTH);
+
+        String date = String.valueOf(gun)+String.valueOf(ay)+String.valueOf(yil);
+        mReference =  FirebaseDatabase.getInstance().getReference("Users").child(mUser.getUid()).child(date);
+        HashMap<String,String> data2;
+        data2 = new HashMap<>();
         mReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot snp : snapshot.getChildren()){
-                   data.put(snp.getKey().toString(),snp.getValue().toString());
+                    data2.put(snp.getKey().toString(),snp.getValue().toString());
                 }
-
-                info = new UserInfo(data.get("name").toString(),data.get("sex").toString(),
-                        Integer.parseInt(data.get("years").toString()),Integer.parseInt(data.get("weight").toString()),
-                        Integer.parseInt(data.get("height").toString()));
+                if (data2.get("takenCal")!=null){
+                taken = Integer.parseInt(data2.get("takenCal").toString());
+                }
+                if (data2.get("burnedCal")!=null) {
+                    burned = Integer.parseInt(data2.get("burnedCal").toString());
+                }
 
             }
 
@@ -81,6 +115,36 @@ public class menu extends AppCompatActivity {
 
             }
         });
+
+
+        mReference = FirebaseDatabase.getInstance().getReference("Users").child(mUser.getUid());
+        data = new HashMap<>();
+        mReference.addValueEventListener(new ValueEventListener() {
+
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                for(DataSnapshot snp : snapshot.getChildren()){
+                   data.put(snp.getKey().toString(),snp.getValue().toString());
+                }
+
+                info = new UserInfo(data.get("name").toString(),data.get("sex").toString(),
+                        Integer.parseInt(data.get("years").toString()),Integer.parseInt(data.get("weight").toString()),
+                        Integer.parseInt(data.get("height").toString()));
+                info.setCalorie_taken(taken);
+                info.setCalorie_burn(burned);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+
+
 
         accountButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -156,6 +220,9 @@ public class menu extends AppCompatActivity {
                 finish();
             }
         });
+
+
+
     }
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();

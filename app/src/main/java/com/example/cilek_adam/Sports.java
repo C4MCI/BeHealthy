@@ -15,6 +15,14 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Calendar;
+import java.util.HashMap;
+
 public class Sports extends AppCompatActivity {
 
     UserInfo info;
@@ -24,6 +32,9 @@ public class Sports extends AppCompatActivity {
     Spinner sportSpinner;
     Switch sportsSwitch;
     Button saveButton;
+    DatabaseReference mReference;
+    FirebaseUser mUser;
+    FirebaseAuth mAuth;
 
 
 
@@ -34,6 +45,8 @@ public class Sports extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("");
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.barColor)));
+        mAuth = FirebaseAuth.getInstance();
+        mUser = mAuth.getCurrentUser();
 
         info = new UserInfo();
         headerText = findViewById(R.id.sports_header);
@@ -91,12 +104,29 @@ public class Sports extends AppCompatActivity {
                         break;
                 }
 
-                info.addCalorieBurn(caloriesBurned);
                 if (!sportsSwitch.isChecked()){
                     Toast.makeText(Sports.this, "Güncelleme Başarılı!", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(Sports.this, "Updated Successfully!", Toast.LENGTH_SHORT).show();
                 }
+                Calendar simdikiZaman = Calendar.getInstance();
+                int yil = simdikiZaman.get(Calendar.YEAR);
+                int ay = simdikiZaman.get(Calendar.MONTH) + 1; // Ay başlangıcı 0'dan başladığı için 1 eklenir
+                int gun = simdikiZaman.get(Calendar.DAY_OF_MONTH);
+
+                String date = String.valueOf(gun)+String.valueOf(ay)+String.valueOf(yil);
+
+
+                mReference =  FirebaseDatabase.getInstance().getReference("Users").child(mUser.getUid()).child(date);
+                HashMap<String,String> mData = new HashMap<>();
+                info.addCalorieBurn(caloriesBurned);
+                mData.put("burnedCal",String.valueOf(info.getCalorie_burn()));
+                mData.put("takenCal",String.valueOf(info.getCalorie_taken()));
+                mReference.setValue(mData);
+
+
+
+
                 Intent intent = new Intent(getApplicationContext(),menu.class);
                 startActivity(intent);
                 finish();

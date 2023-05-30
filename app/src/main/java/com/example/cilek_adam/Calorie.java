@@ -18,7 +18,13 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Calendar;
+import java.util.HashMap;
 import java.util.Objects;
 
 public class Calorie extends AppCompatActivity {
@@ -31,6 +37,9 @@ public class Calorie extends AppCompatActivity {
     Switch calorieSwitch;
 
     Button saveButton;
+    DatabaseReference mReference;
+    FirebaseUser mUser;
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +48,8 @@ public class Calorie extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("");
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.barColor)));
-
+        mAuth = FirebaseAuth.getInstance();
+        mUser = mAuth.getCurrentUser();
 
         info = new UserInfo();
         headerText = findViewById(R.id.calorie_header);
@@ -100,6 +110,21 @@ public class Calorie extends AppCompatActivity {
                 }else {
                     Toast.makeText(Calorie.this, "Updated Successfully!", Toast.LENGTH_SHORT).show();
                 }
+                Calendar simdikiZaman = Calendar.getInstance();
+                int yil = simdikiZaman.get(Calendar.YEAR);
+                int ay = simdikiZaman.get(Calendar.MONTH) + 1; // Ay başlangıcı 0'dan başladığı için 1 eklenir
+                int gun = simdikiZaman.get(Calendar.DAY_OF_MONTH);
+
+                String date = String.valueOf(gun)+String.valueOf(ay)+String.valueOf(yil);
+
+
+                mReference =  FirebaseDatabase.getInstance().getReference("Users").child(mUser.getUid()).child(date);
+                HashMap<String,String> mData = new HashMap<>();
+                mData.put("takenCal",String.valueOf(info.getCalorie_taken()));
+                mData.put("burnedCal",String.valueOf(info.getCalorie_burn()));
+                mReference.setValue(mData);
+
+
                 Intent intent = new Intent(getApplicationContext(),menu.class);
                 startActivity(intent);
                 finish();

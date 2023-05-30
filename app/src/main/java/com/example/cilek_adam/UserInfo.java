@@ -2,7 +2,7 @@ package com.example.cilek_adam;
 
 public class UserInfo {
     public static String name,sex,bmiRateValue;
-    public static int years,weight,height, calorie_taken = 0, calorie_burn = 0;
+    public static int years,weight,height, calorie_taken , calorie_burn ;
     public static double bmi;
 
     UserInfo(String n, String s, int y,int w, int h){
@@ -40,9 +40,12 @@ public class UserInfo {
         return String.valueOf(height);
     }
 
+    public void setCalorie_taken(int cal){calorie_taken = cal;}
+    public void setCalorie_burn(int cal){calorie_burn = cal;}
     public void addCalorieTaken(int cal) {
         calorie_taken += cal;
     }
+
 
     public void addCalorieBurn(int cal) {
         calorie_burn += cal;
@@ -51,6 +54,7 @@ public class UserInfo {
     public int getCalorie_taken(){
         return calorie_taken;
     }
+
 
     public int getCalorie_burn(){
         return calorie_burn;

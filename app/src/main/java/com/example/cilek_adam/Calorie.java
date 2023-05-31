@@ -40,6 +40,7 @@ public class Calorie extends AppCompatActivity {
     DatabaseReference mReference;
     FirebaseUser mUser;
     FirebaseAuth mAuth;
+    boolean sw;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +49,8 @@ public class Calorie extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("");
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.barColor)));
+        sw = getIntent().getBooleanExtra("sw", false);
+
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
 
@@ -126,6 +129,8 @@ public class Calorie extends AppCompatActivity {
 
 
                 Intent intent = new Intent(getApplicationContext(),menu.class);
+                sw = calorieSwitch.isChecked();
+                intent.putExtra("sw", sw);
                 startActivity(intent);
                 finish();
 
@@ -136,6 +141,7 @@ public class Calorie extends AppCompatActivity {
 
 
         });
+        calorieSwitch.setChecked(sw);
 
     }
 
@@ -146,6 +152,8 @@ public class Calorie extends AppCompatActivity {
             // Geri düğmesine basıldığında yapılacak işlemler
             // Burada belirli bir aktiviteye yönlendirebilirsiniz
             Intent intent = new Intent(this, menu.class);
+            sw = calorieSwitch.isChecked();
+            intent.putExtra("sw", sw);
             startActivity(intent);
             return true;
         }

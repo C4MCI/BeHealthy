@@ -33,6 +33,7 @@ public class logIn extends AppCompatActivity {
 
     Switch switchB;
     TextView tV;
+    boolean sw;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +41,9 @@ public class logIn extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("");
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.barColor)));
+
+         sw = getIntent().getBooleanExtra("sw", false);
+
         mAuth = FirebaseAuth.getInstance();
         editTextEmail = findViewById(R.id.email);
         editTextPassword = findViewById(R.id.password);
@@ -47,6 +51,7 @@ public class logIn extends AppCompatActivity {
         progressBar = findViewById(R.id.loginProgressBar);
         tV= findViewById(R.id.logTextView);
         switchB = findViewById(R.id.loginSwitch);
+
         switchB.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -89,6 +94,8 @@ public class logIn extends AppCompatActivity {
                                                 Toast.LENGTH_SHORT).show();
                                     }
                                     Intent intent = new Intent(getApplicationContext(), menu.class);
+                                    sw = switchB.isChecked();
+                                    intent.putExtra("sw", sw);
                                     startActivity(intent);
                                     finish();
 
@@ -109,6 +116,7 @@ public class logIn extends AppCompatActivity {
 
             }
         });
+        switchB.setChecked(sw);
     }
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -117,6 +125,8 @@ public class logIn extends AppCompatActivity {
             // Geri düğmesine basıldığında yapılacak işlemler
             // Burada belirli bir aktiviteye yönlendirebilirsiniz
             Intent intent = new Intent(this, MainActivity.class);
+            sw = switchB.isChecked();
+            intent.putExtra("sw", sw);
             startActivity(intent);
             return true;
         }

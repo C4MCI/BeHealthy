@@ -29,6 +29,7 @@ public class register extends AppCompatActivity {
     FirebaseAuth mAuth;
     Switch switchB;
     TextView tV;
+    boolean sw;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +37,9 @@ public class register extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("");
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.barColor)));
+
+        sw = getIntent().getBooleanExtra("sw", false);
+
         mAuth = FirebaseAuth.getInstance();
         tV= findViewById(R.id.regTextView);
         editTextEmail = findViewById(R.id.regEmail);
@@ -87,6 +91,8 @@ public class register extends AppCompatActivity {
                                     }
 
                                     Intent intent = new Intent(getApplicationContext(),Register2.class);
+                                    sw = switchB.isChecked();
+                                    intent.putExtra("sw", sw);
                                     startActivity(intent);
                                     finish();
 
@@ -107,6 +113,7 @@ public class register extends AppCompatActivity {
 
             }
         });
+        switchB.setChecked(sw);
     }
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -115,6 +122,8 @@ public class register extends AppCompatActivity {
             // Geri düğmesine basıldığında yapılacak işlemler
             // Burada belirli bir aktiviteye yönlendirebilirsiniz
             Intent intent = new Intent(this, MainActivity.class);
+            sw = switchB.isChecked();
+            intent.putExtra("sw", sw);
             startActivity(intent);
             return true;
         }

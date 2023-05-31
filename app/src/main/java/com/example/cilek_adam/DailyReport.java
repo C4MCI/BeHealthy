@@ -22,6 +22,7 @@ public class DailyReport extends AppCompatActivity {
     UserInfo info;
 
     Switch dailySwitch;
+    boolean sw;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +31,7 @@ public class DailyReport extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("");
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.barColor)));
+        sw = getIntent().getBooleanExtra("sw", false);
 
         info = new UserInfo();
         headerText = findViewById(R.id.daily_header);
@@ -60,6 +62,7 @@ public class DailyReport extends AppCompatActivity {
                 }
             }
         });
+        dailySwitch.setChecked(sw);
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -69,6 +72,8 @@ public class DailyReport extends AppCompatActivity {
             // Geri düğmesine basıldığında yapılacak işlemler
             // Burada belirli bir aktiviteye yönlendirebilirsiniz
             Intent intent = new Intent(this, menu.class);
+            sw = dailySwitch.isChecked();
+            intent.putExtra("sw", sw);
             startActivity(intent);
             return true;
         }

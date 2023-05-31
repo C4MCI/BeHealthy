@@ -14,12 +14,14 @@ public class MainActivity extends AppCompatActivity {
 Switch switchB;
     Button b2;
     Button b1;
+    boolean sw;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().setTitle("");
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.barColor)));
+        sw = getIntent().getBooleanExtra("sw", false);
         switchB = findViewById(R.id.fatSwitch);
 
          b1 =findViewById(R.id.button);
@@ -41,15 +43,21 @@ Switch switchB;
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, logIn.class);
+                sw = switchB.isChecked();
+                i.putExtra("sw", sw);
                 startActivity(i);
+                finish();
             }
         });
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, register.class);
+                sw = switchB.isChecked();
+                i.putExtra("sw", sw);
                 startActivity(i);
             }
         });
+        switchB.setChecked(sw);
     }
 }

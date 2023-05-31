@@ -19,7 +19,6 @@
             android:id="@+id/updateTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:fontFamily="@font/baloo"
             android:gravity="center"
             android:shadowColor="#000000"
@@ -52,8 +51,10 @@
                 android:id="@+id/updateYearsText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="15dp"
+                android:paddingRight="40dp"
+                android:paddingLeft="30dp"
                 android:text="@string/reg2_years_T"
+                android:textSize="30dp"
                 android:fontFamily="@font/baloo"
                 android:shadowColor="#000000"
                 android:shadowDx="10"
@@ -92,13 +93,15 @@
                 android:id="@+id/updateWeightText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="15dp"
+                android:paddingRight="40dp"
+                android:paddingLeft="30dp"
                 android:text="@string/reg2_weight_T"
                 android:fontFamily="@font/baloo"
                 android:shadowColor="#000000"
                 android:shadowDx="10"
                 android:shadowDy="10"
                 android:shadowRadius="15"
+                android:textSize="30dp"
                 android:textColor="@color/white"/>/>
 
             <Space
@@ -132,12 +135,14 @@
                 android:id="@+id/updateHeightText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="15dp"
+                android:paddingRight="40dp"
+                android:paddingLeft="30dp"
                 android:text="@string/reg2_height_T"
                 android:fontFamily="@font/baloo"
                 android:shadowColor="#000000"
                 android:shadowDx="10"
                 android:shadowDy="10"
+                android:textSize="30dp"
                 android:shadowRadius="15"
                 android:textColor="@color/white"/>/>
 

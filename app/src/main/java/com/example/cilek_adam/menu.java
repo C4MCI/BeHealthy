@@ -34,7 +34,7 @@ public class menu extends AppCompatActivity {
     DatabaseReference mReference;
     HashMap<String,String> data;
     UserInfo info;
-
+boolean sw;
     Switch menuSwitch;
     int taken = 0,burned = 0;
     @Override
@@ -43,6 +43,8 @@ public class menu extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("");
+        sw = getIntent().getBooleanExtra("sw", false);
+
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.barColor)));
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
@@ -150,6 +152,8 @@ public class menu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Account.class);
+                sw = menuSwitch.isChecked();
+                intent.putExtra("sw", sw);
                 startActivity(intent);
             }
         });
@@ -158,6 +162,8 @@ public class menu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),UpdateInfo.class);
+                sw = menuSwitch.isChecked();
+                intent.putExtra("sw", sw);
                 startActivity(intent);
             }
         });
@@ -166,6 +172,8 @@ public class menu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Calorie.class);
+                sw = menuSwitch.isChecked();
+                intent.putExtra("sw", sw);
                 startActivity(intent);
             }
         });
@@ -174,6 +182,8 @@ public class menu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),DailyReport.class);
+                sw = menuSwitch.isChecked();
+                intent.putExtra("sw", sw);
                 startActivity(intent);
             }
         });
@@ -182,6 +192,8 @@ public class menu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Sports.class);
+                sw = menuSwitch.isChecked();
+                intent.putExtra("sw", sw);
                 startActivity(intent);
             }
         });
@@ -216,11 +228,13 @@ public class menu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),MuscleAndFat.class);
+                sw = menuSwitch.isChecked();
+                intent.putExtra("sw", sw);
                 startActivity(intent);
                 finish();
             }
         });
-
+menuSwitch.setChecked(sw);
 
 
     }
@@ -232,6 +246,8 @@ public class menu extends AppCompatActivity {
             // Burada belirli bir aktiviteye yönlendirebilirsiniz
             mAuth.signOut();
             Intent intent = new Intent(this, logIn.class);
+            sw = menuSwitch.isChecked();
+            intent.putExtra("sw", sw);
             startActivity(intent);
             return true;
         }

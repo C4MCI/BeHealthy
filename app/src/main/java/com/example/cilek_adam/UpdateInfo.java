@@ -31,6 +31,7 @@ Switch updateS;
 FirebaseUser mUser;
 FirebaseAuth mAuth;
 DatabaseReference mReference;
+boolean sw;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +40,8 @@ DatabaseReference mReference;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("");
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.barColor)));
+        sw = getIntent().getBooleanExtra("sw", false);
+
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
         mReference = FirebaseDatabase.getInstance().getReference("Users").child(mUser.getUid());
@@ -100,6 +103,8 @@ DatabaseReference mReference;
                                 Toast.makeText(UpdateInfo.this, "Updated Successfully!", Toast.LENGTH_SHORT).show();
                             }
                             Intent intent = new Intent(getApplicationContext(),menu.class);
+                            sw = updateS.isChecked();
+                            intent.putExtra("sw", sw);
                             startActivity(intent);
                             finish();
                         }else{
@@ -131,7 +136,7 @@ DatabaseReference mReference;
 
 
         });
-
+updateS.setChecked(sw);
 
 
 
@@ -144,6 +149,8 @@ DatabaseReference mReference;
             // Geri düğmesine basıldığında yapılacak işlemler
             // Burada belirli bir aktiviteye yönlendirebilirsiniz
             Intent intent = new Intent(this, menu.class);
+            sw = updateS.isChecked();
+            intent.putExtra("sw", sw);
             startActivity(intent);
             return true;
         }

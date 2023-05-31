@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.MenuItem;
@@ -33,11 +34,15 @@ Button saveB;
 DatabaseReference mReference;
 FirebaseUser mUser;
 FirebaseAuth mAuth;
+boolean sw;
     HashMap<String,String> mData;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register2);
+        sw = getIntent().getBooleanExtra("sw", false);
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.barColor)));
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
         mReference = FirebaseDatabase.getInstance().getReference();
@@ -126,6 +131,8 @@ FirebaseAuth mAuth;
                                                  Toast.LENGTH_SHORT).show();
                                      }
                                      Intent intent = new Intent(getApplicationContext(),menu.class);
+                                     sw = langS.isChecked();
+                                     intent.putExtra("sw", sw);
                                      startActivity(intent);
                                      finish();
                                  }else{
@@ -146,6 +153,7 @@ FirebaseAuth mAuth;
              }
             }
         });
+        langS.setChecked(sw);
 
     }
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -155,6 +163,8 @@ FirebaseAuth mAuth;
             // Geri düğmesine basıldığında yapılacak işlemler
             // Burada belirli bir aktiviteye yönlendirebilirsiniz
             Intent intent = new Intent(this, MainActivity.class);
+            sw = langS.isChecked();
+            intent.putExtra("sw", sw);
             startActivity(intent);
             return true;
         }

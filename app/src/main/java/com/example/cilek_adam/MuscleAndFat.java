@@ -18,6 +18,7 @@ public class MuscleAndFat extends AppCompatActivity {
 TextView fatTV,belTV,boyunTV,fatRatioTV1,fatRatioTV2,kalcaTV,yagKGTV1,yagKGTV2;
 Button calculateFat;
 Switch fatS;
+boolean sw;
 double fat,fatkg;
 UserInfo info;
 EditText belET,boyunET,kalcaET;
@@ -25,6 +26,8 @@ EditText belET,boyunET,kalcaET;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_muscle_and_fat);
+        sw = getIntent().getBooleanExtra("sw", false);
+
         info = new UserInfo();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("");
@@ -95,6 +98,7 @@ EditText belET,boyunET,kalcaET;
 
             }
         });
+        fatS.setChecked(sw);
 
 
     }
@@ -105,6 +109,8 @@ EditText belET,boyunET,kalcaET;
             // Geri düğmesine basıldığında yapılacak işlemler
             // Burada belirli bir aktiviteye yönlendirebilirsiniz
             Intent intent = new Intent(this, menu.class);
+            sw = fatS.isChecked();
+            intent.putExtra("sw", sw);
             startActivity(intent);
             return true;
         }

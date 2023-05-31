@@ -23,12 +23,14 @@ TextView accountTV,nameTV,emailTV,yearsTV,weightTV,heightTV,sexTV;
 Switch Aswitch;
 FirebaseAuth mAuth;
 FirebaseUser mUser;
+boolean sw;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("");
+        sw = getIntent().getBooleanExtra("sw", false);
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.barColor)));
         info = new UserInfo();
         mAuth = FirebaseAuth.getInstance();
@@ -81,7 +83,7 @@ FirebaseUser mUser;
 
                 }else {
                     accountTV.setText(R.string.account_myAccount_T);
-                    nameTV.setText(R.string.reg2_name_T);
+                    nameTV.setText(R.string.account_name_T);
                     emailTV.setText(R.string.account_email);
                     yearsTV.setText(R.string.reg2_years_T);
                     weightTV.setText(R.string.reg2_weight_T);
@@ -93,6 +95,7 @@ FirebaseUser mUser;
                 }
             }
         });
+        Aswitch.setChecked(sw);
     }
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -101,6 +104,8 @@ FirebaseUser mUser;
             // Geri düğmesine basıldığında yapılacak işlemler
             // Burada belirli bir aktiviteye yönlendirebilirsiniz
             Intent intent = new Intent(this, menu.class);
+            sw = Aswitch.isChecked();
+            intent.putExtra("sw", sw);
             startActivity(intent);
             return true;
         }

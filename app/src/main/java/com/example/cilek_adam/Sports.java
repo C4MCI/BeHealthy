@@ -37,6 +37,7 @@ public class Sports extends AppCompatActivity {
     DatabaseReference mReference;
     FirebaseUser mUser;
     FirebaseAuth mAuth;
+    boolean sw;
 
 
 
@@ -47,6 +48,7 @@ public class Sports extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("");
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.barColor)));
+        sw = getIntent().getBooleanExtra("sw", false);
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
 
@@ -130,6 +132,8 @@ public class Sports extends AppCompatActivity {
 
 
                 Intent intent = new Intent(getApplicationContext(),menu.class);
+                sw = sportsSwitch.isChecked();
+                intent.putExtra("sw", sw);
                 startActivity(intent);
                 finish();
             }
@@ -159,7 +163,7 @@ public class Sports extends AppCompatActivity {
                 }
             }
         });
-
+    sportsSwitch.setChecked(sw);
 
 
     }
@@ -171,6 +175,8 @@ public class Sports extends AppCompatActivity {
             // Geri düğmesine basıldığında yapılacak işlemler
             // Burada belirli bir aktiviteye yönlendirebilirsiniz
             Intent intent = new Intent(this, menu.class);
+            sw = sportsSwitch.isChecked();
+            intent.putExtra("sw", sw);
             startActivity(intent);
             return true;
         }

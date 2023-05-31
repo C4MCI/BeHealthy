@@ -41,7 +41,14 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="start">
+                android:gravity="start"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="85dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@android:drawable/btn_star_big_on" />
 
                 <TextView
                     android:id="@+id/accountNameTV"
@@ -62,15 +69,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="TextView"
                     android:fontFamily="@font/baloo"
                     android:padding="5dp"
                     android:shadowColor="#000000"
                     android:shadowDx="10"
                     android:shadowDy="10"
                     android:shadowRadius="15"
+                    android:text="TextView"
                     android:textColor="@color/white"
-                    android:textSize="25dp"/>
+                    android:textSize="25dp" />
             </LinearLayout>
 
             <Space
@@ -81,6 +88,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="87dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:srcCompat="@android:drawable/ic_dialog_email" />
 
                 <TextView
                     android:id="@+id/accountEmailTV"
@@ -121,6 +135,13 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="88dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:srcCompat="@android:drawable/ic_menu_agenda" />
+
                 <TextView
                     android:id="@+id/accountYearsTV"
                     android:layout_width="match_parent"
@@ -159,6 +180,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="88dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:srcCompat="@mipmap/weight_foreground" />
 
                 <TextView
                     android:id="@+id/accountWeightTV"
@@ -200,6 +228,13 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
+                <ImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="88dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:srcCompat="@mipmap/height_foreground" />
+
                 <TextView
                     android:id="@+id/accountHeightTV"
                     android:layout_width="match_parent"
@@ -240,6 +275,13 @@
                 android:gravity=""
                 android:orientation="horizontal">
 
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="88dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:srcCompat="@mipmap/sex_foreground" />
+
                 <TextView
                     android:id="@+id/accountSexTV"
                     android:layout_width="match_parent"
@@ -277,7 +319,8 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:gravity="center">
 
                 <TextView
                     android:id="@+id/accountBMITV"

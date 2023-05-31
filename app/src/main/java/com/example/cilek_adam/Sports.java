@@ -8,7 +8,9 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Switch;
@@ -130,6 +132,31 @@ public class Sports extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(),menu.class);
                 startActivity(intent);
                 finish();
+            }
+        });
+
+        ArrayAdapter<CharSequence> adapterE = ArrayAdapter.createFromResource(this,
+                R.array.sports_spinner_E, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
+
+        ArrayAdapter<CharSequence> adapterT = ArrayAdapter.createFromResource(this,
+                R.array.sports_spinner_T, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
+        sportsSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+
+
+                if (isChecked) {
+                    headerText.setText(R.string.sports_header_E);
+                    descriptionText.setText(R.string.sports_descriptionText_E);
+                    sportSpinner.setAdapter(adapterE);
+                    saveButton.setText(R.string.sports_saveButton_E);
+                } else {
+                    headerText.setText(R.string.sports_header_T);
+                    descriptionText.setText(R.string.sports_descriptionText_T);
+                    sportSpinner.setAdapter(adapterT);
+                    saveButton.setText(R.string.sports_saveButton_T);
+                }
             }
         });
 

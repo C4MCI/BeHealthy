@@ -8,7 +8,6 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.Switch;
@@ -29,7 +28,7 @@ public class menu extends AppCompatActivity {
     FirebaseAuth mAuth;
     TextView accountText, dailyText, calorieText, recipesText, sportsText, waterText, weightText,
              updateText, healthText;
-    ImageButton accountButton, updateButton, calorieButton, dailyButton, weightButton, sportsButton;
+    ImageButton accountButton, updateButton, calorieButton, dailyButton, weightButton, sportsButton, recipeButton;
     FirebaseUser mUser;
     DatabaseReference mReference;
     HashMap<String,String> data;
@@ -72,7 +71,7 @@ boolean sw;
         calorieButton = findViewById(R.id.menu_calorieButton);
         dailyButton = findViewById(R.id.menu_dailyButton);
         sportsButton = findViewById(R.id.menu_sportsButton);
-        menuSwitch = findViewById(R.id.menuSwitch);
+        menuSwitch = findViewById(R.id.recipe_switch);
         accountText = findViewById(R.id.menu_accountText);
         dailyText = findViewById(R.id.menu_dailyText);
         calorieText = findViewById(R.id.menu_calorieText);
@@ -83,6 +82,7 @@ boolean sw;
         updateText = findViewById(R.id.menu_updateText);
         healthText = findViewById(R.id.menu_healthText);
         weightButton = findViewById(R.id.menu_weightButton);
+        recipeButton = findViewById(R.id.menu_recipesButton);
 
 
 
@@ -192,6 +192,16 @@ boolean sw;
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Sports.class);
+                sw = menuSwitch.isChecked();
+                intent.putExtra("sw", sw);
+                startActivity(intent);
+            }
+        });
+
+        recipeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),Recipe.class);
                 sw = menuSwitch.isChecked();
                 intent.putExtra("sw", sw);
                 startActivity(intent);

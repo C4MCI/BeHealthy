@@ -102,7 +102,7 @@ boolean sw;
                             }else {
                                 Toast.makeText(UpdateInfo.this, "Updated Successfully!", Toast.LENGTH_SHORT).show();
                             }
-                            Intent intent = new Intent(getApplicationContext(),menu.class);
+                            Intent intent = new Intent(getApplicationContext(),Account.class);
                             sw = updateS.isChecked();
                             intent.putExtra("sw", sw);
                             startActivity(intent);
@@ -148,7 +148,7 @@ updateS.setChecked(sw);
         if (id == android.R.id.home) {
             // Geri düğmesine basıldığında yapılacak işlemler
             // Burada belirli bir aktiviteye yönlendirebilirsiniz
-            Intent intent = new Intent(this, menu.class);
+            Intent intent = new Intent(this, Account.class);
             sw = updateS.isChecked();
             intent.putExtra("sw", sw);
             startActivity(intent);

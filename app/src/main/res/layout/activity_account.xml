@@ -30,9 +30,9 @@
                 android:fontFamily="@font/baloo"
                 android:gravity="center"
                 android:shadowColor="#000000"
-                android:shadowDx="10"
+                android:shadowDx="4"
                 android:shadowDy="10"
-                android:shadowRadius="15"
+                android:shadowRadius="12"
                 android:text="@string/account_myAccount_T"
                 android:textColor="@color/white"
                 android:textSize="50dp" />
@@ -61,9 +61,9 @@
                     android:fontFamily="@font/baloo"
                     android:padding="5dp"
                     android:shadowColor="#000000"
-                    android:shadowDx="10"
+                    android:shadowDx="4"
                     android:shadowDy="10"
-                    android:shadowRadius="15"
+                    android:shadowRadius="12"
                     android:text="@string/account_name_T"
                     android:textColor="@color/white"
                     android:textSize="25dp" />
@@ -76,9 +76,9 @@
                     android:fontFamily="@font/baloo"
                     android:padding="5dp"
                     android:shadowColor="#000000"
-                    android:shadowDx="10"
+                    android:shadowDx="4"
                     android:shadowDy="10"
-                    android:shadowRadius="15"
+                    android:shadowRadius="12"
                     android:text="TextView"
                     android:textColor="@color/white"
                     android:textSize="25dp" />
@@ -108,9 +108,9 @@
                     android:fontFamily="@font/baloo"
                     android:padding="5dp"
                     android:shadowColor="#000000"
-                    android:shadowDx="10"
+                    android:shadowDx="4"
                     android:shadowDy="10"
-                    android:shadowRadius="15"
+                    android:shadowRadius="12"
                     android:text="@string/reg2_years_T"
                     android:textColor="@color/white"
                     android:textSize="25dp" />
@@ -124,9 +124,9 @@
                     android:fontFamily="@font/baloo"
                     android:padding="5dp"
                     android:shadowColor="#000000"
-                    android:shadowDx="10"
+                    android:shadowDx="4"
                     android:shadowDy="10"
-                    android:shadowRadius="15"
+                    android:shadowRadius="12"
                     android:textColor="@color/white"
                     android:textSize="25dp"/>
             </LinearLayout>
@@ -154,9 +154,9 @@
                     android:fontFamily="@font/baloo"
                     android:padding="5dp"
                     android:shadowColor="#000000"
-                    android:shadowDx="10"
+                    android:shadowDx="4"
                     android:shadowDy="10"
-                    android:shadowRadius="15"
+                    android:shadowRadius="12"
                     android:text="@string/reg2_weight_T"
                     android:textColor="@color/white"
                     android:textSize="25dp"
@@ -171,9 +171,9 @@
                     android:fontFamily="@font/baloo"
                     android:padding="5dp"
                     android:shadowColor="#000000"
-                    android:shadowDx="10"
+                    android:shadowDx="4"
                     android:shadowDy="10"
-                    android:shadowRadius="15"
+                    android:shadowRadius="12"
                     android:textColor="@color/white"
                     android:textSize="25dp"/>
             </LinearLayout>
@@ -201,9 +201,9 @@
                     android:fontFamily="@font/baloo"
                     android:padding="5dp"
                     android:shadowColor="#000000"
-                    android:shadowDx="10"
+                    android:shadowDx="4"
                     android:shadowDy="10"
-                    android:shadowRadius="15"
+                    android:shadowRadius="12"
                     android:text="@string/reg2_height_T"
                     android:textColor="@color/white"
                     android:textSize="25dp" />
@@ -217,9 +217,9 @@
                     android:fontFamily="@font/baloo"
                     android:padding="5dp"
                     android:shadowColor="#000000"
-                    android:shadowDx="10"
+                    android:shadowDx="4"
                     android:shadowDy="10"
-                    android:shadowRadius="15"
+                    android:shadowRadius="12"
                     android:textColor="@color/white"
                     android:textSize="25dp"/>
             </LinearLayout>
@@ -248,9 +248,9 @@
                     android:fontFamily="@font/baloo"
                     android:padding="5dp"
                     android:shadowColor="#000000"
-                    android:shadowDx="10"
+                    android:shadowDx="4"
                     android:shadowDy="10"
-                    android:shadowRadius="15"
+                    android:shadowRadius="12"
                     android:text="@string/account_sex_T"
                     android:textColor="@color/white"
                     android:textSize="25dp" />
@@ -264,9 +264,9 @@
                     android:fontFamily="@font/baloo"
                     android:padding="5dp"
                     android:shadowColor="#000000"
-                    android:shadowDx="10"
+                    android:shadowDx="4"
                     android:shadowDy="10"
-                    android:shadowRadius="15"
+                    android:shadowRadius="12"
                     android:textColor="@color/white"
                     android:textSize="25dp"/>
             </LinearLayout>
@@ -289,9 +289,9 @@
                     android:fontFamily="@font/baloo"
                     android:padding="5dp"
                     android:shadowColor="#000000"
-                    android:shadowDx="10"
+                    android:shadowDx="4"
                     android:shadowDy="10"
-                    android:shadowRadius="15"
+                    android:shadowRadius="12"
                     android:text="BMI"
                     android:textColor="@color/white"
                     android:textSize="25dp" />
@@ -304,9 +304,9 @@
                     android:fontFamily="@font/baloo"
                     android:padding="5dp"
                     android:shadowColor="#000000"
-                    android:shadowDx="10"
+                    android:shadowDx="4"
                     android:shadowDy="10"
-                    android:shadowRadius="15"
+                    android:shadowRadius="12"
                     android:text="TextView"
                     android:textColor="@color/white"
                     android:textSize="25dp" />
@@ -320,9 +320,9 @@
                     android:fontFamily="@font/baloo"
                     android:padding="5dp"
                     android:shadowColor="#000000"
-                    android:shadowDx="10"
+                    android:shadowDx="4"
                     android:shadowDy="10"
-                    android:shadowRadius="15"
+                    android:shadowRadius="12"
                     android:textColor="@color/white"
                     android:textSize="25dp"/>
             </LinearLayout>
@@ -336,7 +336,9 @@
             android:id="@+id/accountupdatebutton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bilgilerini Güncelle" />
+            android:text="Bilgilerini Güncelle"
+            android:fontFamily="@font/baloo"
+            />
 
         <Space
             android:layout_width="match_parent"

@@ -19,7 +19,9 @@ import androidx.appcompat.app.AppCompatActivity;
 public class Recipe extends AppCompatActivity {
     UserInfo info;
 
-    TextView welcome_bmiTV, welcome_kiloTV;
+    TextView welcome_bmiTV, welcome_kiloTV, kiloal1,kiloal2, kiloal3, kilover1,kilover2,kilover3, recipe1, recipe2, recipe3, recipe4,
+    recipe5, recipe6;
+
     Switch trSwitch;
 
     Button buttonKahvalti, buttonPizza, buttonSalata, buttonYulaf, buttonPankek, buttonHindi;
@@ -38,6 +40,21 @@ public class Recipe extends AppCompatActivity {
 
         welcome_bmiTV = findViewById(R.id.textView3);
         welcome_kiloTV = findViewById(R.id.textView4);
+        kiloal1 = findViewById(R.id.text_pizza2);
+        kiloal2 = findViewById(R.id.text_yulaf2);
+        kiloal3 = findViewById(R.id.hindi_text2);
+        kilover1 = findViewById(R.id.text_kahvalti2);
+        kilover2 = findViewById(R.id.text_salata2);
+        kilover3 = findViewById(R.id.text_pankek2);
+        recipe1 = findViewById(R.id.text_kahvalti1);
+        recipe2 = findViewById(R.id.text_pizza1);
+        recipe3 = findViewById(R.id.text_salata1);
+        recipe4 = findViewById(R.id.text_yulaf1);
+        recipe5 = findViewById(R.id.text_pankek1);
+        recipe6 = findViewById(R.id.hindi_text1);
+
+
+
 
         trSwitch = findViewById(R.id.recipe_switch);
 
@@ -47,6 +64,7 @@ public class Recipe extends AppCompatActivity {
         buttonYulaf = findViewById(R.id.button_yulaf);
         buttonPankek = findViewById(R.id.button_pankek);
         buttonHindi = findViewById(R.id.button_hindi);
+
 
         welcome_bmiTV.setText("BMI değeriniz: " + info.getBMIString());
         welcome_kiloTV.setText("Burası ayarlanacak.");
@@ -105,9 +123,65 @@ public class Recipe extends AppCompatActivity {
             }
         });
 
+        trSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (isChecked) {
+                    welcome_bmiTV.setText(R.string.recipe_bmi_E);
+                    welcome_kiloTV.setText(R.string.recipe_kilo_E);
+                    kiloal1.setText(R.string.kilo_al_E);
+                    kiloal2.setText(R.string.kilo_al_E);
+                    kiloal3.setText(R.string.kilo_al_E);
+                    kilover1.setText(R.string.kilo_ver_E);
+                    kilover2.setText(R.string.kilo_ver_E);
+                    kilover3.setText(R.string.kilo_ver_E);
+                    recipe1.setText(R.string.breakfast_recipeE);
+                    recipe2.setText(R.string.pizza_recipeE);
+                    recipe3.setText(R.string.salata_recipeE);
+                    recipe4.setText(R.string.yulaf_recipeE);
+                    recipe5.setText(R.string.pankek_recipeE);
+                    recipe6.setText(R.string.hindi_recipeE);
+                    buttonKahvalti.setText(R.string.tarifE);
+                    buttonPizza.setText(R.string.tarifE);
+                    buttonSalata.setText(R.string.tarifE);
+                    buttonYulaf.setText(R.string.tarifE);
+                    buttonPankek.setText(R.string.tarifE);
+                    buttonHindi.setText(R.string.tarifE);
+
+
+
+
+                } else {
+                    welcome_bmiTV.setText(R.string.recipe_bmi_T);
+                    welcome_kiloTV.setText(R.string.recipe_kilo_T);
+                    kiloal1.setText(R.string.kilo_al_T);
+                    kiloal2.setText(R.string.kilo_al_T);
+                    kiloal3.setText(R.string.kilo_al_T);
+                    kilover1.setText(R.string.kilo_ver_T);
+                    kilover2.setText(R.string.kilo_ver_T);
+                    kilover3.setText(R.string.kilo_ver_T);
+                    recipe1.setText(R.string.breakfast_recipeT);
+                    recipe2.setText(R.string.pizza_recipeT);
+                    recipe3.setText(R.string.salata_recipeT);
+                    recipe4.setText(R.string.yulaf_recipeT);
+                    recipe5.setText(R.string.pankek_recipeT);
+                    recipe6.setText(R.string.hindi_recipeT);
+                    buttonKahvalti.setText(R.string.tarifT);
+                    buttonPizza.setText(R.string.tarifT);
+                    buttonSalata.setText(R.string.tarifT);
+                    buttonYulaf.setText(R.string.tarifT);
+                    buttonPankek.setText(R.string.tarifT);
+                    buttonHindi.setText(R.string.tarifT);
+
+                }
+            }
+        });
+
 
 
     }
+
+
 
 
 

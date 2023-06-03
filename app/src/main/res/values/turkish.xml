@@ -98,6 +98,41 @@
     <string name="fat_fatmass_E">Fat Mass:</string>
     <string name="fat_fatmass_T">Yağ Kütlesi:</string>
 
+    <string name="recipe_bmi_E">Your BMI rate: </string>
+    <string name="recipe_bmi_T">BMI değeriniz: </string>
+    <string name="recipe_kilo_E">Will be held</string>
+    <string name="recipe_kilo_T">Düzenlenecek</string>
+    <string name="kilo_al_E">Gain Weight!</string>
+    <string name="kilo_al_T">Kilo Al!</string>
+    <string name="kilo_ver_E">Lose Weight!</string>
+    <string name="kilo_ver_T">Kilo Ver!</string>
+    <string name="tarifE">RECIPE</string>
+    <string name="tarifT">TARİF</string>
+    <string name="breakfast_recipeE">Fit Breakfast</string>
+    <string name="breakfast_recipeT">Fit Kahvaltı</string>
+    <string name="pizza_recipeE">Bulk Pizza</string>
+    <string name="pizza_recipeT">Bulk Pizza</string>
+    <string name="salata_recipeE">Lentil Salad</string>
+    <string name="salata_recipeT">Mercimek Salatası</string>
+    <string name="yulaf_recipeE">Bulk Oat</string>
+    <string name="yulaf_recipeT">Bulk Yulaf</string>
+    <string name="pankek_recipeE">Coffee Pancakes</string>
+    <string name="pankek_recipeT">Kahveli Pankek</string>
+    <string name="hindi_recipeE">Fit Meal With Turkey</string>
+    <string name="hindi_recipeT">Hindili Sporcu Öğünü</string>
+
+    <string name="wo_baslikE">Workout Programs</string>
+    <string name="wo_baslikT">Antrenman Programları</string>
+    <string name="wo_5x5E">5x5 Workout Program</string>
+    <string name="wo_5x5T">5x5 Antrenman Programı</string>
+    <string name="wo_3x5E">3x5 Workout Program</string>
+    <string name="wo_3x5T">3x5 Antrenman Programı</string>
+    <string name="wo_fullbodyE">Full Body Workout Program</string>
+    <string name="wo_fullbodyT">Tüm Vücut Antrenman Programı</string>
+    <string name="wo_splitE">Split Workout Program</string>
+    <string name="wo_splitT">Bölgesel Antrenman Programı</string>
+    <string name="wo_kardiyoE">Cardio Program</string>
+    <string name="wo_kardiyoT">Kardiyo Programı</string>
 
     <string-array name="sports_spinner_T">
         <item>Yürüyüş</item>

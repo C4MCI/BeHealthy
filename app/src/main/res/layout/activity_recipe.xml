@@ -109,8 +109,8 @@
 
         <Button
             android:id="@+id/button_hindi"
-            android:layout_width="93dp"
-            android:layout_height="48dp"
+            android:layout_width="100dp"
+            android:layout_height="45dp"
             android:layout_marginEnd="16dp"
             android:text="TARİF"
             android:textStyle="bold"
@@ -145,8 +145,8 @@
 
         <TextView
             android:id="@+id/text_pankek1"
-            android:layout_width="110dp"
-            android:layout_height="48dp"
+            android:layout_width="90dp"
+            android:layout_height="50dp"
             android:layout_marginStart="16dp"
             android:gravity="center"
             android:text="Kahveli Pankek"
@@ -170,8 +170,8 @@
 
         <Button
             android:id="@+id/button_pankek"
-            android:layout_width="93dp"
-            android:layout_height="48dp"
+            android:layout_width="100dp"
+            android:layout_height="45dp"
             android:layout_marginEnd="16dp"
             android:text="TARİF"
             android:textStyle="bold"
@@ -230,8 +230,8 @@
 
         <Button
             android:id="@+id/button_yulaf"
-            android:layout_width="93dp"
-            android:layout_height="48dp"
+            android:layout_width="100dp"
+            android:layout_height="45dp"
             android:layout_marginEnd="16dp"
             android:text="TARİF"
             android:textStyle="bold"
@@ -290,8 +290,8 @@
 
         <Button
             android:id="@+id/button_salata"
-            android:layout_width="93dp"
-            android:layout_height="48dp"
+            android:layout_width="100dp"
+            android:layout_height="45dp"
             android:layout_marginEnd="16dp"
             android:text="TARİF"
             android:textStyle="bold"
@@ -350,8 +350,8 @@
 
         <Button
             android:id="@+id/button_pizza"
-            android:layout_width="93dp"
-            android:layout_height="48dp"
+            android:layout_width="100dp"
+            android:layout_height="45dp"
             android:layout_marginEnd="16dp"
             android:text="TARİF"
             android:textStyle="bold"
@@ -410,8 +410,8 @@
 
         <Button
             android:id="@+id/button_kahvalti"
-            android:layout_width="93dp"
-            android:layout_height="48dp"
+            android:layout_width="100dp"
+            android:layout_height="45dp"
             android:layout_marginEnd="16dp"
             android:text="TARİF"
             android:textStyle="bold"

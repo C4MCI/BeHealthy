@@ -18,11 +18,12 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class Account extends AppCompatActivity {
 UserInfo info;
-TextView accountTV,nameTV,emailTV,yearsTV,weightTV,heightTV,sexTV;
-    TextView nameTV2,emailTV2,yearsTV2,weightTV2,heightTV2,sexTV2,BMITV2,BMITV3;
+TextView accountTV,nameTV,yearsTV,weightTV,heightTV,sexTV;
+    TextView nameTV2,yearsTV2,weightTV2,heightTV2,sexTV2,BMITV2,BMITV3;
 Switch Aswitch;
 FirebaseAuth mAuth;
 FirebaseUser mUser;
+Button update;
 boolean sw;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,15 +38,13 @@ boolean sw;
         mUser = mAuth.getCurrentUser();
         accountTV = findViewById(R.id.accountTV);
         nameTV = findViewById(R.id.accountNameTV);
-        emailTV = findViewById(R.id.accountEmailTV);
         yearsTV = findViewById(R.id.accountYearsTV);
         weightTV = findViewById(R.id.accountWeightTV);
         heightTV = findViewById(R.id.accountHeightTV);
         sexTV= findViewById(R.id.accountSexTV);
         Aswitch = findViewById(R.id.accountSwitch);
-
+        update = findViewById(R.id.accountupdatebutton);
         nameTV2 = findViewById(R.id.accountNameTV2);
-        emailTV2 = findViewById(R.id.accountEmailTV2);
         yearsTV2 = findViewById(R.id.accountYearsTV2);
         weightTV2 = findViewById(R.id.accountWeightTV2);
         heightTV2 = findViewById(R.id.accountHeightTV2);
@@ -54,7 +53,6 @@ boolean sw;
         BMITV3 = findViewById(R.id.accountBMITV3);
 
         nameTV2.setText(":  "+info.getName());
-        emailTV2.setText(":  "+mUser.getEmail());
         yearsTV2.setText(":  "+info.getYearsString());
         weightTV2.setText(":  "+info.getWeightString());
         heightTV2.setText(":  "+info.getHeightString());
@@ -65,7 +63,6 @@ boolean sw;
 
 
 
-
         Aswitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @SuppressLint("SetTextI18n")
             @Override
@@ -73,18 +70,17 @@ boolean sw;
                 if (isChecked){
                     accountTV.setText(R.string.account_myAccount_E);
                     nameTV.setText(R.string.reg2_name_E );
-                    emailTV.setText(R.string.account_email);
                     yearsTV.setText(R.string.reg2_years_E);
                     weightTV.setText(R.string.reg2_weight_E );
                     heightTV.setText(R.string.reg2_height_E);
                     sexTV.setText(R.string.account_sex_E);
                     sexTV2.setText(":  "+info.getSex());
                     BMITV3.setText("-->  "+info.getBmiRate());
+                    update.setText(R.string.update_updateInfo_E);
 
                 }else {
                     accountTV.setText(R.string.account_myAccount_T);
                     nameTV.setText(R.string.account_name_T);
-                    emailTV.setText(R.string.account_email);
                     yearsTV.setText(R.string.reg2_years_T);
                     weightTV.setText(R.string.reg2_weight_T);
                     heightTV.setText(R.string.reg2_height_T);
@@ -92,11 +88,22 @@ boolean sw;
                     if(info.getSex().equals("Men")){ sexTV2.setText(":  "+"Erkek");}
                     else {sexTV2.setText(":  "+"Kadın");}
                     BMITV3.setText("-->  "+info.getBmiRateTR());
+                    update.setText(R.string.update_updateInfo_T);
                 }
+            }
+        });
+        update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Account.this, UpdateInfo.class);
+                sw = Aswitch.isChecked();
+                intent.putExtra("sw", sw);
+                startActivity(intent);
             }
         });
         Aswitch.setChecked(sw);
     }
+
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 

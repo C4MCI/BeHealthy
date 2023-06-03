@@ -95,7 +95,7 @@ boolean sw;
         update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Account.this, UpdateInfo.class);
+                Intent intent = new Intent(getApplicationContext(), UpdateInfo.class);
                 sw = Aswitch.isChecked();
                 intent.putExtra("sw", sw);
                 startActivity(intent);

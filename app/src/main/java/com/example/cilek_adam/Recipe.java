@@ -178,7 +178,7 @@ public class Recipe extends AppCompatActivity {
         });
 
 
-
+    trSwitch.setChecked(sw);
     }
 
 

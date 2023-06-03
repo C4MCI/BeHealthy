@@ -33,7 +33,7 @@ public class Recipe extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("");
+        getSupportActionBar().setTitle("Recipe");
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.barColor)));
         sw = getIntent().getBooleanExtra("sw", false);
         info = new UserInfo();
@@ -178,7 +178,7 @@ public class Recipe extends AppCompatActivity {
         });
 
 
-    trSwitch.setChecked(sw);
+        trSwitch.setChecked(sw);
     }
 
 

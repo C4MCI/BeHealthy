@@ -52,7 +52,11 @@ public class Workout extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), WebWorkout.class);
-                i.putExtra("url", "https://www.kasvekuvvet.net/stronglifts-5x5");
+                if(trSwitch.isChecked()){
+                    i.putExtra("url", "https://www.healthline.com/health/fitness/5x5-workout");
+                }
+                else i.putExtra("url", "https://www.kasvekuvvet.net/stronglifts-5x5");
+
                 startActivity(i);
             }
         });

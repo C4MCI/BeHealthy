@@ -44,6 +44,7 @@
         android:layout_width="149dp"
         android:layout_height="28dp"
         android:layout_marginTop="24dp"
+        android:fontFamily="@font/baloo"
         android:gravity="center"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,6 +56,7 @@
         android:layout_width="245dp"
         android:layout_height="25dp"
         android:layout_marginTop="16dp"
+        android:fontFamily="@font/baloo"
         android:gravity="center"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -85,9 +87,10 @@
 
         <TextView
             android:id="@+id/hindi_text1"
-            android:layout_width="127dp"
-            android:layout_height="46dp"
+            android:layout_width="102dp"
+            android:layout_height="44dp"
             android:layout_marginStart="16dp"
+            android:fontFamily="@font/baloo"
             android:gravity="center"
             android:text="Hindili Sporcu Öğünü"
             android:textStyle="bold"
@@ -98,9 +101,10 @@
 
         <TextView
             android:id="@+id/hindi_text2"
-            android:layout_width="80dp"
+            android:layout_width="102dp"
             android:layout_height="30dp"
             android:layout_marginTop="16dp"
+            android:fontFamily="@font/baloo"
             android:gravity="center"
             android:text="Kilo Al!"
             android:textStyle="bold"
@@ -113,6 +117,7 @@
             android:layout_width="100dp"
             android:layout_height="45dp"
             android:layout_marginEnd="16dp"
+            android:fontFamily="@font/baloo"
             android:text="TARİF"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -146,9 +151,10 @@
 
         <TextView
             android:id="@+id/text_pankek1"
-            android:layout_width="90dp"
-            android:layout_height="50dp"
+            android:layout_width="102dp"
+            android:layout_height="44dp"
             android:layout_marginStart="16dp"
+            android:fontFamily="@font/baloo"
             android:gravity="center"
             android:text="Kahveli Pankek"
             android:textStyle="bold"
@@ -159,9 +165,10 @@
 
         <TextView
             android:id="@+id/text_pankek2"
-            android:layout_width="80dp"
+            android:layout_width="102dp"
             android:layout_height="30dp"
             android:layout_marginTop="16dp"
+            android:fontFamily="@font/baloo"
             android:gravity="center"
             android:text="Kilo Ver!"
             android:textStyle="bold"
@@ -174,6 +181,7 @@
             android:layout_width="100dp"
             android:layout_height="45dp"
             android:layout_marginEnd="16dp"
+            android:fontFamily="@font/baloo"
             android:text="TARİF"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -206,9 +214,10 @@
 
         <TextView
             android:id="@+id/text_yulaf1"
-            android:layout_width="127dp"
-            android:layout_height="46dp"
+            android:layout_width="102dp"
+            android:layout_height="44dp"
             android:layout_marginStart="16dp"
+            android:fontFamily="@font/baloo"
             android:gravity="center"
             android:text="Bulk Yulaf"
             android:textStyle="bold"
@@ -219,9 +228,10 @@
 
         <TextView
             android:id="@+id/text_yulaf2"
-            android:layout_width="80dp"
+            android:layout_width="102dp"
             android:layout_height="30dp"
             android:layout_marginTop="16dp"
+            android:fontFamily="@font/baloo"
             android:gravity="center"
             android:text="Kilo Al!"
             android:textStyle="bold"
@@ -234,6 +244,7 @@
             android:layout_width="100dp"
             android:layout_height="45dp"
             android:layout_marginEnd="16dp"
+            android:fontFamily="@font/baloo"
             android:text="TARİF"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -269,6 +280,7 @@
             android:layout_width="102dp"
             android:layout_height="44dp"
             android:layout_marginStart="16dp"
+            android:fontFamily="@font/baloo"
             android:gravity="center"
             android:text="Mercimek Salatası"
             android:textStyle="bold"
@@ -279,9 +291,10 @@
 
         <TextView
             android:id="@+id/text_salata2"
-            android:layout_width="80dp"
+            android:layout_width="102dp"
             android:layout_height="30dp"
             android:layout_marginTop="16dp"
+            android:fontFamily="@font/baloo"
             android:gravity="center"
             android:text="Kilo Ver!"
             android:textStyle="bold"
@@ -294,6 +307,7 @@
             android:layout_width="100dp"
             android:layout_height="45dp"
             android:layout_marginEnd="16dp"
+            android:fontFamily="@font/baloo"
             android:text="TARİF"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -326,9 +340,10 @@
 
         <TextView
             android:id="@+id/text_pizza1"
-            android:layout_width="127dp"
-            android:layout_height="46dp"
+            android:layout_width="102dp"
+            android:layout_height="44dp"
             android:layout_marginStart="16dp"
+            android:fontFamily="@font/baloo"
             android:gravity="center"
             android:text="Bulk Pizza"
             android:textStyle="bold"
@@ -339,9 +354,10 @@
 
         <TextView
             android:id="@+id/text_pizza2"
-            android:layout_width="80dp"
+            android:layout_width="102dp"
             android:layout_height="30dp"
             android:layout_marginTop="16dp"
+            android:fontFamily="@font/baloo"
             android:gravity="center"
             android:text="Kilo Al!"
             android:textStyle="bold"
@@ -354,6 +370,7 @@
             android:layout_width="100dp"
             android:layout_height="45dp"
             android:layout_marginEnd="16dp"
+            android:fontFamily="@font/baloo"
             android:text="TARİF"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -386,9 +403,10 @@
 
         <TextView
             android:id="@+id/text_kahvalti1"
-            android:layout_width="127dp"
-            android:layout_height="46dp"
+            android:layout_width="102dp"
+            android:layout_height="44dp"
             android:layout_marginStart="16dp"
+            android:fontFamily="@font/baloo"
             android:gravity="center"
             android:text="Fit Kahvaltı"
             android:textStyle="bold"
@@ -399,9 +417,10 @@
 
         <TextView
             android:id="@+id/text_kahvalti2"
-            android:layout_width="80dp"
+            android:layout_width="102dp"
             android:layout_height="30dp"
             android:layout_marginTop="16dp"
+            android:fontFamily="@font/baloo"
             android:gravity="center"
             android:text="Kilo Ver!"
             android:textStyle="bold"
@@ -414,6 +433,7 @@
             android:layout_width="100dp"
             android:layout_height="45dp"
             android:layout_marginEnd="16dp"
+            android:fontFamily="@font/baloo"
             android:text="TARİF"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"

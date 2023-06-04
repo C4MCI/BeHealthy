@@ -26,7 +26,7 @@ public class Workout extends AppCompatActivity {
 
     Button button3, button4, button5, button6, button7;
 
-    TextView baslik;
+    TextView baslik, text1, text2, text3, text4, text5;
 
     boolean sw;
 
@@ -49,6 +49,12 @@ public class Workout extends AppCompatActivity {
         button6 = findViewById(R.id.button6);
         button7 = findViewById(R.id.button7);
 
+        text1 = findViewById(R.id.wotext1);
+        text2 = findViewById(R.id.wotext2);
+        text3 = findViewById(R.id.wotext3);
+        text4 = findViewById(R.id.wotext4);
+        text5 = findViewById(R.id.wotext5);
+
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,7 +72,10 @@ public class Workout extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), WebWorkout.class);
-                i.putExtra("url", "https://fithub.com.tr/kaslari-sisiren-en-iyi-full-body-antrenman-programi/");
+                if(trSwitch.isChecked()){
+                    i.putExtra("url", "https://hashimashi.com/3x5-workout/#:~:text=3×5%20Workout%20Program%20–%20Introduction,the%20weekend%20off%20to%20recover");
+                }
+                else i.putExtra("url", "https://formassist.net/blogs/egzersiz/vucut-gelistirmek-icin-3-x-5-antrenman-programi");
                 startActivity(i);
             }
         });
@@ -75,7 +84,10 @@ public class Workout extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), WebWorkout.class);
-                i.putExtra("url", "https://formassist.net/blogs/egzersiz/vucut-gelistirmek-icin-3-x-5-antrenman-programi");
+                if(trSwitch.isChecked()){
+                    i.putExtra("url", "https://www.setforset.com/blogs/news/full-body-workout-plan");
+                }
+                else i.putExtra("url", "https://fithub.com.tr/kaslari-sisiren-en-iyi-full-body-antrenman-programi/");
                 startActivity(i);
             }
         });
@@ -84,7 +96,10 @@ public class Workout extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), WebWorkout.class);
-                i.putExtra("url", "https://fithub.com.tr/kusursuz-bir-vucut-icin-split-antrenman-programi/");
+                if(trSwitch.isChecked()){
+                    i.putExtra("url", "https://www.healthline.com/health/fitness/split-workout-schedule");
+                }
+                else i.putExtra("url", "https://fithub.com.tr/kusursuz-bir-vucut-icin-split-antrenman-programi/");
                 startActivity(i);
             }
         });
@@ -93,7 +108,10 @@ public class Workout extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), WebWorkout.class);
-                i.putExtra("url", "https://www.agirsaglam.com/kardiyo/");
+                if(trSwitch.isChecked()){
+                    i.putExtra("url", "https://www.verywellfit.com/cardio-workout-program-weight-loss-1230810");
+                }
+                else i.putExtra("url", "https://www.agirsaglam.com/kardiyo/");
                 startActivity(i);
             }
         });
@@ -103,26 +121,38 @@ public class Workout extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if (isChecked) {
                     baslik.setText(R.string.wo_baslikE);
-                    button3.setText(R.string.wo_5x5E);
-                    button4.setText(R.string.wo_fullbodyE);
-                    button5.setText(R.string.wo_3x5E);
-                    button6.setText(R.string.wo_splitE);
-                    button7.setText(R.string.wo_kardiyoE);
+                    text1.setText(R.string.wo_5x5E);
+                    text2.setText(R.string.wo_fullbodyE);
+                    text3.setText(R.string.wo_3x5E);
+                    text4.setText(R.string.wo_splitE);
+                    text5.setText(R.string.wo_kardiyoE);
+                    button3.setText(R.string.program);
+                    button4.setText(R.string.program);
+                    button5.setText(R.string.program);
+                    button6.setText(R.string.program);
+                    button7.setText(R.string.program);
 
                 } else {
                     baslik.setText(R.string.wo_baslikT);
-                    button3.setText(R.string.wo_5x5T);
-                    button4.setText(R.string.wo_fullbodyT);
-                    button5.setText(R.string.wo_3x5T);
-                    button6.setText(R.string.wo_splitT);
-                    button7.setText(R.string.wo_kardiyoT);
+                    text1.setText(R.string.wo_5x5T);
+                    text2.setText(R.string.wo_fullbodyT);
+                    text3.setText(R.string.wo_3x5T);
+                    text4.setText(R.string.wo_splitT);
+                    text5.setText(R.string.wo_kardiyoT);
+                    button3.setText(R.string.program);
+                    button4.setText(R.string.program);
+                    button5.setText(R.string.program);
+                    button6.setText(R.string.program);
+                    button7.setText(R.string.program);
                 }
             }
+
+
         });
 
 
 
-
+        trSwitch.setChecked(sw);
 
     }
 

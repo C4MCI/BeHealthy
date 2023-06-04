@@ -133,6 +133,7 @@
     <string name="wo_splitT">Bölgesel Antrenman Programı</string>
     <string name="wo_kardiyoE">Cardio Program</string>
     <string name="wo_kardiyoT">Kardiyo Programı</string>
+    <string name="program">Program</string>
 
     <string-array name="sports_spinner_T">
         <item>Yürüyüş</item>

@@ -28,7 +28,7 @@ public class menu extends AppCompatActivity {
     FirebaseAuth mAuth;
     TextView accountText, dailyText, calorieText, recipesText, sportsText, waterText, weightText,
              updateText, healthText;
-    ImageButton accountButton, updateButton, calorieButton, dailyButton, weightButton, sportsButton, recipeButton, workoutButton;
+    ImageButton accountButton, updateButton, calorieButton, dailyButton, weightButton, sportsButton, recipeButton, workoutButton, waterButton;
     FirebaseUser mUser;
     DatabaseReference mReference;
     HashMap<String,String> data;
@@ -84,7 +84,7 @@ boolean sw;
         weightButton = findViewById(R.id.menu_weightButton);
         recipeButton = findViewById(R.id.menu_recipesButton);
         workoutButton = findViewById(R.id.menu_healthButton);
-
+        waterButton = findViewById(R.id.menu_waterButton);
 
 
 
@@ -213,6 +213,16 @@ boolean sw;
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Workout.class);
+                sw = menuSwitch.isChecked();
+                intent.putExtra("sw", sw);
+                startActivity(intent);
+            }
+        });
+
+        waterButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),Water.class);
                 sw = menuSwitch.isChecked();
                 intent.putExtra("sw", sw);
                 startActivity(intent);

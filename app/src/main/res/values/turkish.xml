@@ -136,6 +136,14 @@
     <string name="wo_kardiyoE">Cardio Program</string>
     <string name="wo_kardiyoT">Kardiyo Programı</string>
     <string name="program">Program</string>
+    <string name="water_baslikE">Water Tracker</string>
+    <string name="water_baslikT">Su Takibi</string>
+    <string name="water_aciklamaE">Please input the amount of water you drink in mL Form. (1 Liter = 1000mL)</string>
+    <string name="water_aciklamaT">Lütfen içtiğiniz su miktarını mL cinsinden giriniz. (1 Litre = 1000mL)</string>
+    <string name="water_inputE">Type here</string>
+    <string name="water_inputT">Buraya yazınız</string>
+    <string name="water_buttonE">SAVE</string>
+    <string name="water_buttonT">KAYDET</string>
 
     <string-array name="sports_spinner_T">
         <item>Yürüyüş</item>

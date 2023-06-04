@@ -13,9 +13,10 @@
 
         android:gravity="center"
         android:orientation="vertical">
+
         <Space
             android:layout_width="match_parent"
-            android:layout_height="25dp"></Space>
+            android:layout_height="100dp"></Space>
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
@@ -32,13 +33,16 @@
             android:textSize="50dp"
             android:textStyle="bold" />
 
-        <Space
+        <ImageView
+            android:id="@+id/imageView5"
             android:layout_width="match_parent"
-            android:layout_height="100dp" />
+            android:layout_height="220dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@mipmap/logoo_foreground" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="100dp" />
+            android:layout_height="20dp" />
 
         <Button
             android:id="@+id/button"
@@ -83,8 +87,9 @@
                 app:srcCompat="@mipmap/eng" />
 
         </LinearLayout>
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="20dp"></Space>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="35dp"></Space>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

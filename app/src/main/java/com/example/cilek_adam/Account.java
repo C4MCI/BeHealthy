@@ -62,7 +62,6 @@ boolean sw;
         BMITV3.setText("-->  "+info.getBmiRateTR());
 
 
-
         Aswitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @SuppressLint("SetTextI18n")
             @Override

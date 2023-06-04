@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.Html;
 import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
@@ -47,8 +48,9 @@ public class Calorie extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calorie);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("");
+        getSupportActionBar().setTitle(Html.fromHtml("<font color='#ffffff'>" + getString(R.string.calorie_header_T) + "</font>"));
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.barColor)));
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_action_name);
         sw = getIntent().getBooleanExtra("sw", false);
 
         mAuth = FirebaseAuth.getInstance();
@@ -70,6 +72,7 @@ public class Calorie extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                     if (isChecked) {
+                        getSupportActionBar().setTitle(Html.fromHtml("<font color='#ffffff'>" + getString(R.string.calorie_header_E) + "</font>"));
                         headerText.setText(R.string.calorie_header_E);
                         descriptionText.setText(R.string.calorie_text_E);
                         morningText.setText(R.string.calorie_morningText_E);
@@ -77,6 +80,7 @@ public class Calorie extends AppCompatActivity {
                         eveningText.setText(R.string.calorie_eveningText_E);
                         saveButton.setText(R.string.calorie_saveButton_E);
                     } else {
+                        getSupportActionBar().setTitle(Html.fromHtml("<font color='#ffffff'>" + getString(R.string.calorie_header_T) + "</font>"));
                         headerText.setText(R.string.calorie_header_T);
                         descriptionText.setText(R.string.calorie_text_T);
                         morningText.setText(R.string.calorie_morningText_T);

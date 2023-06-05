@@ -35,7 +35,7 @@ public class menu extends AppCompatActivity {
     UserInfo info;
 boolean sw;
     Switch menuSwitch;
-    int taken = 0,burned = 0;
+    int taken = 0,burned = 0,water = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -112,6 +112,9 @@ boolean sw;
                 if (data2.get("burnedCal")!=null) {
                     burned = Integer.parseInt(data2.get("burnedCal").toString());
                 }
+                if(data2.get("water")!=null){
+                    water = Integer.parseInt(data2.get("water").toString());
+                }
 
             }
 
@@ -138,6 +141,7 @@ boolean sw;
                         Integer.parseInt(data.get("height").toString()));
                 info.setCalorie_taken(taken);
                 info.setCalorie_burn(burned);
+                info.setWater(water);
 
             }
 

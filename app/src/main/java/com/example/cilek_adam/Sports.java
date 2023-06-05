@@ -129,6 +129,7 @@ public class Sports extends AppCompatActivity {
                 info.addCalorieBurn(caloriesBurned);
                 mData.put("burnedCal",String.valueOf(info.getCalorie_burn()));
                 mData.put("takenCal",String.valueOf(info.getCalorie_taken()));
+                mData.put("water",String.valueOf(info.getWater()));
                 mReference.setValue(mData);
 
 

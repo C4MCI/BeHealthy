@@ -33,17 +33,19 @@ import java.util.Objects;
 public class Water extends AppCompatActivity {
 
     EditText su;
+    UserInfo info;
 
-    TextView baslik, aciklama;
+    TextView baslik, aciklama,total;
 
     Button updateButton;
 
     Switch trSwitch;
 
     ProgressBar progressBar;
-
-
-
+    FirebaseUser mUser;
+    FirebaseAuth mAuth;
+    DatabaseReference mReference;
+    int total_water = 0;
     boolean sw;
 
     @Override
@@ -53,12 +55,14 @@ public class Water extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("");
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_action_name);
-
+        info = new UserInfo();
         sw = getIntent().getBooleanExtra("sw", false);
+        getSupportActionBar().setTitle(Html.fromHtml("<font color='#ffffff'>" + "Su" + "</font>"));
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.barColor)));
-
+        mAuth = FirebaseAuth.getInstance();
+        mUser = mAuth.getCurrentUser();
         su = findViewById(R.id.water_input);
-
+        total = findViewById(R.id.total_water);
         baslik = findViewById(R.id.water_baslik);
         aciklama = findViewById(R.id.water_aciklama);
 
@@ -71,18 +75,41 @@ public class Water extends AppCompatActivity {
         baslik.setText(R.string.water_baslikT);
         aciklama.setText(R.string.water_aciklamaT);
         updateButton.setText(R.string.water_buttonT);
+        progressBar.setProgress(info.getWater());
+        total.setText(String.valueOf(info.getWater())+" mL");
         updateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int water;
-                int total_water = 0;
+
                 String wota;
-
                 wota = su.getText().toString();
-                water = Integer.parseInt(wota);
-                total_water += water;
-                progressBar.incrementProgressBy(water);
+                if(wota.isEmpty()){
+                    water = 0;
+                }else{
+                    water = Integer.parseInt(wota);
+                }
 
+                info.addWater(water);
+
+                total.setText(String.valueOf(info.getWater())+" mL");
+                su.setText("");
+                progressBar.setProgress(info.getWater());
+                Calendar simdikiZaman = Calendar.getInstance();
+                int yil = simdikiZaman.get(Calendar.YEAR);
+                int ay = simdikiZaman.get(Calendar.MONTH) + 1; // Ay başlangıcı 0'dan başladığı için 1 eklenir
+                int gun = simdikiZaman.get(Calendar.DAY_OF_MONTH);
+
+                String date = String.valueOf(gun)+String.valueOf(ay)+String.valueOf(yil);
+
+
+                mReference =  FirebaseDatabase.getInstance().getReference("Users").
+                        child(mUser.getUid()).child(date);
+                HashMap<String,String> mData = new HashMap<>();
+                mData.put("water",String.valueOf(info.getWater()));
+                mData.put("takenCal",String.valueOf(info.getCalorie_taken()));
+                mData.put("burnedCal",String.valueOf(info.getCalorie_burn()));
+                mReference.setValue(mData);
 
             }
         });
@@ -94,11 +121,13 @@ public class Water extends AppCompatActivity {
                     baslik.setText(R.string.water_baslikE);
                     aciklama.setText(R.string.water_aciklamaE);
                     updateButton.setText(R.string.water_buttonE);
+                    getSupportActionBar().setTitle(Html.fromHtml("<font color='#ffffff'>" + "Water" + "</font>"));
 
                 } else {
                     baslik.setText(R.string.water_baslikT);
                     aciklama.setText(R.string.water_aciklamaT);
                     updateButton.setText(R.string.water_buttonT);
+                    getSupportActionBar().setTitle(Html.fromHtml("<font color='#ffffff'>" + "Su" + "</font>"));
 
                 }
             }

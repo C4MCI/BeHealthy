@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class UserInfo {
     public static String name,sex,bmiRateValue;
-    public static int years,weight,height, calorie_taken , calorie_burn ;
+    public static int years,weight,height, calorie_taken , calorie_burn ,water;
     public static double bmi;
 
     UserInfo(String n, String s, int y,int w, int h){
@@ -52,6 +52,11 @@ public class UserInfo {
     public void addCalorieBurn(int cal) {
         calorie_burn += cal;
     }
+
+    public void addWater(int w){water += w;}
+
+    public void setWater(int w){water=w;}
+    public int getWater(){return water;}
 
     public int getCalorie_taken(){
         return calorie_taken;

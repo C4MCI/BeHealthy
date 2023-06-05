@@ -121,10 +121,12 @@ public class Calorie extends AppCompatActivity {
                 String date = String.valueOf(gun)+String.valueOf(ay)+String.valueOf(yil);
 
 
-                mReference =  FirebaseDatabase.getInstance().getReference("Users").child(mUser.getUid()).child(date);
+                mReference =  FirebaseDatabase.getInstance().getReference("Users").
+                        child(mUser.getUid()).child(date);
                 HashMap<String,String> mData = new HashMap<>();
                 mData.put("takenCal",String.valueOf(info.getCalorie_taken()));
                 mData.put("burnedCal",String.valueOf(info.getCalorie_burn()));
+                mData.put("water",String.valueOf(info.getWater()));
                 mReference.setValue(mData);
 
 

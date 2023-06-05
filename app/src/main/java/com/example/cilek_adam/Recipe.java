@@ -70,7 +70,10 @@ public class Recipe extends AppCompatActivity {
 
 
         welcome_bmiTV.setText("BMI değeriniz: " + info.getBMIString());
-        welcome_kiloTV.setText("Burası ayarlanacak.");
+        if (info.getBMI()<=25){
+            welcome_kiloTV.setText("Daha iyi bir vücut için kilo almalısın.");
+        }else welcome_kiloTV.setText("Daha iyi bir vücut için kilo vermelisin.");
+
 
         buttonKahvalti.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -158,7 +161,9 @@ public class Recipe extends AppCompatActivity {
                     buttonHindi.setText(R.string.tarifE);
                     getSupportActionBar().setTitle(Html.fromHtml("<font color='#ffffff'>" + "Recipes" + "</font>"));
 
-
+                    if (info.getBMI()<=25){
+                        welcome_kiloTV.setText("You have to gain weight for better body.");
+                    }else welcome_kiloTV.setText("You have to lose weight for better body.");
 
 
                 } else {
@@ -184,7 +189,9 @@ public class Recipe extends AppCompatActivity {
                     buttonHindi.setText(R.string.tarifT);
                     getSupportActionBar().setTitle(Html.fromHtml("<font color='#ffffff'>" + "Yemek Tarifleri" + "</font>"));
 
-
+                    if (info.getBMI()<=25){
+                        welcome_kiloTV.setText("Daha iyi bir vücut için kilo almalısın.");
+                    }else welcome_kiloTV.setText("Daha iyi bir vücut için kilo vermelisin.");
                 }
             }
         });

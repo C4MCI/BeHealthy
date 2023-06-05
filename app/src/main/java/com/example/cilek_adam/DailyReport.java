@@ -3,9 +3,12 @@ package com.example.cilek_adam;
 import static android.content.ContentValues.TAG;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Html;
@@ -68,14 +71,31 @@ public class DailyReport extends AppCompatActivity {
         netCalInput.setText(String.valueOf(calorieNet));
         BMIInput.setText(String.valueOf((int) Math.round(bmi)));
         basalInput.setText(String.valueOf(basalMetabolism));
+        dailySwitch.setChecked(sw);
+
+        Resources res = getResources();
+//        calorieBar.setProgress(30);
+
+        if (calorieNet >= 0) {
+            Drawable pbar = ResourcesCompat.getDrawable(res, R.drawable.progressbar, null);
+            calorieBar.setProgressDrawable(pbar);
+            int progress = (int) ((calorieNet/1000.0) * 100);
+            calorieBar.setProgress(progress);
+        } else {
+            Drawable pbar = ResourcesCompat.getDrawable(res, R.drawable.progressbar_negative, null);
+            calorieBar.setScaleX(-1);
+            calorieBar.setProgressDrawable(pbar);
+            int progress = (int) ((Math.abs(calorieNet)/1000.0) * 100);
+            calorieBar.setProgress(progress);
+        }
         if(bmi<=18){
-            calorieBar.setProgress((int) (calorieTaken/2700.0) * 100);
+            helpText.setText(R.string.daily_helpTextUW_T);
         }else if (bmi<=25){
-            calorieBar.setProgress((int) ((calorieTaken/2200.0) * 100));
+            helpText.setText(R.string.daily_helpTextNW_T);
         } else if(bmi<=35){
-            calorieBar.setProgress((int) ((calorieTaken/1800.0) * 100));
+            helpText.setText(R.string.daily_helpTextOW_T);
         } else{
-            calorieBar.setProgress((int) ((calorieTaken/1600.0) * 100));
+            helpText.setText(R.string.daily_helpTextOW_T);
         }
 
 
@@ -121,7 +141,6 @@ public class DailyReport extends AppCompatActivity {
                 }
             }
         });
-        dailySwitch.setChecked(sw);
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {

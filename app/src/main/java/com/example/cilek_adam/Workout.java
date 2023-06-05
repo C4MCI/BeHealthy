@@ -71,75 +71,7 @@ public class Workout extends AppCompatActivity {
         button5.setText(R.string.program);
         button6.setText(R.string.program);
         button7.setText(R.string.program);
-        button3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), WebWorkout.class);
-                if(trSwitch.isChecked()){
-                    i.putExtra("url", "https://www.healthline.com/health/fitness/5x5-workout");
-                    i.putExtra("sw", sw);
-                }
-                else i.putExtra("url", "https://www.kasvekuvvet.net/stronglifts-5x5");
-                i.putExtra("sw", sw);
-                startActivity(i);
-            }
-        });
 
-        button4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), WebWorkout.class);
-                if(trSwitch.isChecked()){
-                    i.putExtra("url", "https://hashimashi.com/3x5-workout/#:~:text=3×5%20Workout%20Program%20–%20Introduction,the%20weekend%20off%20to%20recover");
-                    i.putExtra("sw", sw);
-                }
-                else i.putExtra("url", "https://formassist.net/blogs/egzersiz/vucut-gelistirmek-icin-3-x-5-antrenman-programi");
-                i.putExtra("sw", sw);
-                startActivity(i);
-            }
-        });
-
-        button5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), WebWorkout.class);
-                if(trSwitch.isChecked()){
-                    i.putExtra("url", "https://www.setforset.com/blogs/news/full-body-workout-plan");
-                    i.putExtra("sw", sw);
-                }
-                else i.putExtra("url", "https://fithub.com.tr/kaslari-sisiren-en-iyi-full-body-antrenman-programi/");
-                i.putExtra("sw", sw);
-                startActivity(i);
-            }
-        });
-
-        button6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), WebWorkout.class);
-                if(trSwitch.isChecked()){
-                    i.putExtra("url", "https://www.healthline.com/health/fitness/split-workout-schedule");
-                    i.putExtra("sw", sw);
-                }
-                else i.putExtra("url", "https://fithub.com.tr/kusursuz-bir-vucut-icin-split-antrenman-programi/");
-                i.putExtra("sw", sw);
-                startActivity(i);
-            }
-        });
-
-        button7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), WebWorkout.class);
-                if(trSwitch.isChecked()){
-                    i.putExtra("url", "https://www.verywellfit.com/cardio-workout-program-weight-loss-1230810");
-                    i.putExtra("sw", sw);
-                }
-                else i.putExtra("url", "https://www.agirsaglam.com/kardiyo/");
-                i.putExtra("sw", sw);
-                startActivity(i);
-            }
-        });
 
         trSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -178,6 +110,87 @@ public class Workout extends AppCompatActivity {
 
 
         });
+
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), WebWorkout.class);
+                if(trSwitch.isChecked()){
+                    i.putExtra("url", "https://www.healthline.com/health/fitness/5x5-workout");
+                    sw = trSwitch.isChecked();
+                    i.putExtra("sw", sw);
+                }
+                else i.putExtra("url", "https://www.kasvekuvvet.net/stronglifts-5x5");
+                sw = trSwitch.isChecked();
+                i.putExtra("sw", sw);
+                startActivity(i);
+            }
+        });
+
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), WebWorkout.class);
+                if(trSwitch.isChecked()){
+                    i.putExtra("url", "https://hashimashi.com/3x5-workout/#:~:text=3×5%20Workout%20Program%20–%20Introduction,the%20weekend%20off%20to%20recover");
+                    sw = trSwitch.isChecked();
+                    i.putExtra("sw", sw);
+                }
+                else i.putExtra("url", "https://formassist.net/blogs/egzersiz/vucut-gelistirmek-icin-3-x-5-antrenman-programi");
+                sw = trSwitch.isChecked();
+                i.putExtra("sw", sw);
+                startActivity(i);
+            }
+        });
+
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), WebWorkout.class);
+                if(trSwitch.isChecked()){
+                    i.putExtra("url", "https://www.setforset.com/blogs/news/full-body-workout-plan");
+                    sw = trSwitch.isChecked();
+                    i.putExtra("sw", sw);
+                }
+                else i.putExtra("url", "https://fithub.com.tr/kaslari-sisiren-en-iyi-full-body-antrenman-programi/");
+                sw = trSwitch.isChecked();
+                i.putExtra("sw", sw);
+                startActivity(i);
+            }
+        });
+
+        button6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), WebWorkout.class);
+                if(trSwitch.isChecked()){
+                    i.putExtra("url", "https://www.healthline.com/health/fitness/split-workout-schedule");
+                    sw = trSwitch.isChecked();
+                    i.putExtra("sw", sw);
+                }
+                else i.putExtra("url", "https://fithub.com.tr/kusursuz-bir-vucut-icin-split-antrenman-programi/");
+                sw = trSwitch.isChecked();
+                i.putExtra("sw", sw);
+                startActivity(i);
+            }
+        });
+
+        button7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), WebWorkout.class);
+                if(trSwitch.isChecked()){
+                    i.putExtra("url", "https://www.verywellfit.com/cardio-workout-program-weight-loss-1230810");
+                    sw = trSwitch.isChecked();
+                    i.putExtra("sw", sw);
+                }
+                else i.putExtra("url", "https://www.agirsaglam.com/kardiyo/");
+                sw = trSwitch.isChecked();
+                i.putExtra("sw", sw);
+                startActivity(i);
+            }
+        });
+
 
 
 

@@ -79,6 +79,7 @@ public class Recipe extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), Web.class);
+                sw = trSwitch.isChecked();
                 if(trSwitch.isChecked()){
                     i.putExtra("url", "https://www.bbcgoodfood.com/recipes/herb-omelette-fried-tomatoes");
                     i.putExtra("sw", sw);
@@ -93,6 +94,7 @@ public class Recipe extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), Web.class);
+                sw = trSwitch.isChecked();
                 if(trSwitch.isChecked()){
                     i.putExtra("url", "https://www.bulk.com/uk/the-core/protein-pizza-recipe/");
                     i.putExtra("sw", sw);
@@ -107,6 +109,7 @@ public class Recipe extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), Web.class);
+                sw = trSwitch.isChecked();
                 if(trSwitch.isChecked()){
                     i.putExtra("url", "https://www.loveandlemons.com/lentil-salad/");
                     i.putExtra("sw", sw);
@@ -121,6 +124,7 @@ public class Recipe extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), Web.class);
+                sw = trSwitch.isChecked();
                 if(trSwitch.isChecked()){
                     i.putExtra("url", "https://www.bulk.com/uk/the-core/protein-pizza-recipe/");
                     i.putExtra("sw", sw);
@@ -135,6 +139,7 @@ public class Recipe extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), Web.class);
+                sw = trSwitch.isChecked();
                 if(trSwitch.isChecked()){
                     i.putExtra("url", "https://theproteinchef.co/coffee-protein-pancakes-recipe/");
                     i.putExtra("sw", sw);
@@ -149,6 +154,7 @@ public class Recipe extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), Web.class);
+                sw = trSwitch.isChecked();
                 if(trSwitch.isChecked()){
                     i.putExtra("url", "https://www.bulkbites.com/bodybuildingrecipes/lunch-tasty-turkey-and-brown-rice-skillet-1100s");
                     i.putExtra("sw", sw);

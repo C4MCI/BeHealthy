@@ -126,7 +126,7 @@ public class Recipe extends AppCompatActivity {
                 Intent i = new Intent(getApplicationContext(), Web.class);
                 sw = trSwitch.isChecked();
                 if(trSwitch.isChecked()){
-                    i.putExtra("url", "https://www.bulk.com/uk/the-core/protein-pizza-recipe/");
+                    i.putExtra("url", "https://mattsfitchef.com/high-calorie-oatmeal-for-weight-gain/");
                     i.putExtra("sw", sw);
                 }
                 else i.putExtra("url", "https://fityemek.com/fit-tarifler/kilo-aldiran-yulaf-ezmesi-tarifi/");
@@ -156,7 +156,7 @@ public class Recipe extends AppCompatActivity {
                 Intent i = new Intent(getApplicationContext(), Web.class);
                 sw = trSwitch.isChecked();
                 if(trSwitch.isChecked()){
-                    i.putExtra("url", "https://www.bulkbites.com/bodybuildingrecipes/lunch-tasty-turkey-and-brown-rice-skillet-1100s");
+                    i.putExtra("url", "https://fitmencook.com/recipes/meal-prep-ground-turkey-recipe/");
                     i.putExtra("sw", sw);
                 }
                 else i.putExtra("url", "https://fityemek.com/fit-tarifler/sporcu-yemegi-1000-kalori/");

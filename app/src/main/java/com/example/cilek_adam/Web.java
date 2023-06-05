@@ -29,7 +29,7 @@ public class Web extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("");
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_action_name);
-
+        sw = getIntent().getBooleanExtra("sw",false);
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.barColor)));
 
         WebView webView = (WebView) findViewById(R.id.webView);

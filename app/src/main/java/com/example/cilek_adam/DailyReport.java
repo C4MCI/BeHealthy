@@ -68,7 +68,6 @@ public class DailyReport extends AppCompatActivity {
         netCalInput.setText(String.valueOf(calorieNet));
         BMIInput.setText(String.valueOf((int) Math.round(bmi)));
         basalInput.setText(String.valueOf(basalMetabolism));
-
         if(bmi<=18){
             calorieBar.setProgress((int) (calorieTaken/2700.0) * 100);
         }else if (bmi<=25){

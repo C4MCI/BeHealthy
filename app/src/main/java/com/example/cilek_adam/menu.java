@@ -27,7 +27,7 @@ import java.util.HashMap;
 public class menu extends AppCompatActivity {
     FirebaseAuth mAuth;
     TextView accountText, dailyText, calorieText, recipesText, sportsText, waterText, weightText,
-             updateText, healthText;
+             updateText, healthText,menuHeader;
     ImageButton accountButton, updateButton, calorieButton, dailyButton, weightButton, sportsButton, recipeButton, workoutButton, waterButton;
     FirebaseUser mUser;
     DatabaseReference mReference;
@@ -42,6 +42,8 @@ boolean sw;
         setContentView(R.layout.activity_menu);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("");
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_action_name);
+
         sw = getIntent().getBooleanExtra("sw", false);
 
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.barColor)));
@@ -65,7 +67,7 @@ boolean sw;
 
 
 
-
+        menuHeader = findViewById(R.id.menu_header);
         updateButton = findViewById(R.id.menu_updateButton);
         accountButton = findViewById(R.id.menu_accountButton);
         calorieButton = findViewById(R.id.menu_calorieButton);
@@ -242,6 +244,7 @@ boolean sw;
                     weightText.setText(R.string.menu_weight_E);
                     updateText.setText(R.string.menu_update_E);
                     healthText.setText(R.string.menu_health_E);
+                    menuHeader.setText("Menu");
                 } else {
                     accountText.setText(R.string.menu_account_T);
                     dailyText.setText(R.string.menu_daily_T);
@@ -252,6 +255,7 @@ boolean sw;
                     weightText.setText(R.string.menu_weight_T);
                     updateText.setText(R.string.menu_update_T);
                     healthText.setText(R.string.menu_health_T);
+                    menuHeader.setText("Menü");
                 }
             }
         });

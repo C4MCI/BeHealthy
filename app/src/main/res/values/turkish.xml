@@ -83,8 +83,22 @@
     <string name="daily_calorieTakenText_T">Alınan Kalori</string>
     <string name="daily_calorieBurnText_E">Calories Burned</string>
     <string name="daily_calorieBurnText_T">Yakılan Kalori</string>
+    <string name="daily_basalText_E">Basal Metabolism</string>
+    <string name="daily_basalText_T">Bazal Metabolizma</string>
+    <string name="daily_netCalText_E">Net Calorie</string>
+    <string name="daily_netCalText_T">Net Kalori</string>
+    <string name="daily_helpTextOW_E">Your weight is higher than normal. You need to lose weight by keeping your daily calorie intake below 2000 kcal.</string>
+    <string name="daily_helpTextOW_T">Kilonuz normalden yüksek. Günlük kalori alımınızı 2000 kcal\'den daha düşük tutarak kilo vermeniz gerekiyor.</string>
+    <string name="daily_helpTextUW_E">Your weight is lower than normal. You need to gain weight by keeping your daily calorie intake above 2000 kcal.</string>
+    <string name="daily_helpTextUW_T">Kilonuz normalden düşük. Günlük kalori alımınızı 2000 kcal\'in üstünde tutarak kilo almanız gerekiyor.</string>
+    <string name="daily_helpTextNW_E">Your weight is ideal. You can maintain you current weight by keeping your eating habits same.</string>
+    <string name="daily_helpTextNW_T">Kilonuz ideal aralıkta. Beslenme alışkanlıklarınızı sabit tutarak mevcut kilonuzu koruyabilirsiniz.</string>
     <string name="daily_calorieTakenInput_T" />
     <string name="daily_calorieBurnInput_T" />
+    <string name="daily_basalInput_T" />
+    <string name="daily_BMIInput_T" />
+    <string name="daily_netCalInput_T" />
+    <string name="daily_BMIText_T">BMI: </string>
 
 
     <string name="fat_calculatefatratio_E">Calculate Fat Ratio</string>

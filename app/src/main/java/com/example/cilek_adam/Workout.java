@@ -8,6 +8,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -35,7 +36,10 @@ public class Workout extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workout);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("");
+        getSupportActionBar().setTitle(Html.fromHtml("<font color='#ffffff'>" + "Antrenman Programları" + "</font>"));
+
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_action_name);
+
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.barColor)));
         sw = getIntent().getBooleanExtra("sw", false);
 
@@ -55,15 +59,28 @@ public class Workout extends AppCompatActivity {
         text4 = findViewById(R.id.wotext4);
         text5 = findViewById(R.id.wotext5);
 
+
+        baslik.setText(R.string.wo_baslikT);
+        text1.setText(R.string.wo_5x5T);
+        text2.setText(R.string.wo_fullbodyT);
+        text3.setText(R.string.wo_3x5T);
+        text4.setText(R.string.wo_splitT);
+        text5.setText(R.string.wo_kardiyoT);
+        button3.setText(R.string.program);
+        button4.setText(R.string.program);
+        button5.setText(R.string.program);
+        button6.setText(R.string.program);
+        button7.setText(R.string.program);
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), WebWorkout.class);
                 if(trSwitch.isChecked()){
                     i.putExtra("url", "https://www.healthline.com/health/fitness/5x5-workout");
+                    i.putExtra("sw", sw);
                 }
                 else i.putExtra("url", "https://www.kasvekuvvet.net/stronglifts-5x5");
-
+                i.putExtra("sw", sw);
                 startActivity(i);
             }
         });
@@ -74,8 +91,10 @@ public class Workout extends AppCompatActivity {
                 Intent i = new Intent(getApplicationContext(), WebWorkout.class);
                 if(trSwitch.isChecked()){
                     i.putExtra("url", "https://hashimashi.com/3x5-workout/#:~:text=3×5%20Workout%20Program%20–%20Introduction,the%20weekend%20off%20to%20recover");
+                    i.putExtra("sw", sw);
                 }
                 else i.putExtra("url", "https://formassist.net/blogs/egzersiz/vucut-gelistirmek-icin-3-x-5-antrenman-programi");
+                i.putExtra("sw", sw);
                 startActivity(i);
             }
         });
@@ -86,8 +105,10 @@ public class Workout extends AppCompatActivity {
                 Intent i = new Intent(getApplicationContext(), WebWorkout.class);
                 if(trSwitch.isChecked()){
                     i.putExtra("url", "https://www.setforset.com/blogs/news/full-body-workout-plan");
+                    i.putExtra("sw", sw);
                 }
                 else i.putExtra("url", "https://fithub.com.tr/kaslari-sisiren-en-iyi-full-body-antrenman-programi/");
+                i.putExtra("sw", sw);
                 startActivity(i);
             }
         });
@@ -98,8 +119,10 @@ public class Workout extends AppCompatActivity {
                 Intent i = new Intent(getApplicationContext(), WebWorkout.class);
                 if(trSwitch.isChecked()){
                     i.putExtra("url", "https://www.healthline.com/health/fitness/split-workout-schedule");
+                    i.putExtra("sw", sw);
                 }
                 else i.putExtra("url", "https://fithub.com.tr/kusursuz-bir-vucut-icin-split-antrenman-programi/");
+                i.putExtra("sw", sw);
                 startActivity(i);
             }
         });
@@ -110,8 +133,10 @@ public class Workout extends AppCompatActivity {
                 Intent i = new Intent(getApplicationContext(), WebWorkout.class);
                 if(trSwitch.isChecked()){
                     i.putExtra("url", "https://www.verywellfit.com/cardio-workout-program-weight-loss-1230810");
+                    i.putExtra("sw", sw);
                 }
                 else i.putExtra("url", "https://www.agirsaglam.com/kardiyo/");
+                i.putExtra("sw", sw);
                 startActivity(i);
             }
         });
@@ -131,6 +156,8 @@ public class Workout extends AppCompatActivity {
                     button5.setText(R.string.program);
                     button6.setText(R.string.program);
                     button7.setText(R.string.program);
+                    getSupportActionBar().setTitle(Html.fromHtml("<font color='#ffffff'>" + "Workout Programs" + "</font>"));
+
 
                 } else {
                     baslik.setText(R.string.wo_baslikT);
@@ -144,6 +171,8 @@ public class Workout extends AppCompatActivity {
                     button5.setText(R.string.program);
                     button6.setText(R.string.program);
                     button7.setText(R.string.program);
+                    getSupportActionBar().setTitle(Html.fromHtml("<font color='#ffffff'>" + "Antrenman Programları" + "</font>"));
+
                 }
             }
 

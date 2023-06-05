@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -33,7 +34,9 @@ public class Recipe extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Recipe");
+        getSupportActionBar().setTitle(Html.fromHtml("<font color='#ffffff'>" + "Yemek Tarifleri" + "</font>"));
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_action_name);
+
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.barColor)));
         sw = getIntent().getBooleanExtra("sw", false);
         info = new UserInfo();
@@ -74,6 +77,7 @@ public class Recipe extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), Web.class);
                 i.putExtra("url", "https://fityemek.com/fit-tarifler/sef-gibi-kahvalti-hazirla/");
+                i.putExtra("sw", sw);
                 startActivity(i);
             }
         });
@@ -83,6 +87,7 @@ public class Recipe extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), Web.class);
                 i.putExtra("url", "https://fityemek.com/fit-tarifler/pizza-bulk-kilo-aldirir-kas-yaptirir/");
+                i.putExtra("sw", sw);
                 startActivity(i);
             }
         });
@@ -92,6 +97,7 @@ public class Recipe extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), Web.class);
                 i.putExtra("url", "https://fityemek.com/fit-tarifler/mercimek-salatasi-tarifi/");
+                i.putExtra("sw", sw);
                 startActivity(i);
             }
         });
@@ -101,6 +107,7 @@ public class Recipe extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), Web.class);
                 i.putExtra("url", "https://fityemek.com/fit-tarifler/kilo-aldiran-yulaf-ezmesi-tarifi/");
+                i.putExtra("sw", sw);
                 startActivity(i);
             }
         });
@@ -110,6 +117,7 @@ public class Recipe extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), Web.class);
                 i.putExtra("url", "https://fityemek.com/fit-tarifler/kahveli-pankek-tarifi/");
+                i.putExtra("sw", sw);
                 startActivity(i);
             }
         });
@@ -119,6 +127,7 @@ public class Recipe extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), Web.class);
                 i.putExtra("url", "https://fityemek.com/fit-tarifler/sporcu-yemegi-1000-kalori/");
+                i.putExtra("sw", sw);
                 startActivity(i);
             }
         });
@@ -127,7 +136,7 @@ public class Recipe extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if (isChecked) {
-                    welcome_bmiTV.setText(R.string.recipe_bmi_E);
+                    welcome_bmiTV.setText("Your BMI Rate: " + info.getBMIString());
                     welcome_kiloTV.setText(R.string.recipe_kilo_E);
                     kiloal1.setText(R.string.kilo_al_E);
                     kiloal2.setText(R.string.kilo_al_E);
@@ -147,12 +156,13 @@ public class Recipe extends AppCompatActivity {
                     buttonYulaf.setText(R.string.tarifE);
                     buttonPankek.setText(R.string.tarifE);
                     buttonHindi.setText(R.string.tarifE);
+                    getSupportActionBar().setTitle(Html.fromHtml("<font color='#ffffff'>" + "Recipes" + "</font>"));
 
 
 
 
                 } else {
-                    welcome_bmiTV.setText(R.string.recipe_bmi_T);
+                    welcome_bmiTV.setText("BMI değeriniz: "+ info.getBMIString());
                     welcome_kiloTV.setText(R.string.recipe_kilo_T);
                     kiloal1.setText(R.string.kilo_al_T);
                     kiloal2.setText(R.string.kilo_al_T);
@@ -172,6 +182,8 @@ public class Recipe extends AppCompatActivity {
                     buttonYulaf.setText(R.string.tarifT);
                     buttonPankek.setText(R.string.tarifT);
                     buttonHindi.setText(R.string.tarifT);
+                    getSupportActionBar().setTitle(Html.fromHtml("<font color='#ffffff'>" + "Yemek Tarifleri" + "</font>"));
+
 
                 }
             }

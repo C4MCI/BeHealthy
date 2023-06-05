@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -30,7 +31,9 @@ boolean sw;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("");
+        getSupportActionBar().setTitle(Html.fromHtml("<font color='#ffffff'>" + getString(R.string.account_myAccount_T) + "</font>"));
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_action_name);
+
         sw = getIntent().getBooleanExtra("sw", false);
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.barColor)));
         info = new UserInfo();
@@ -62,7 +65,6 @@ boolean sw;
         BMITV3.setText("-->  "+info.getBmiRateTR());
 
 
-
         Aswitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @SuppressLint("SetTextI18n")
             @Override
@@ -77,6 +79,8 @@ boolean sw;
                     sexTV2.setText(":  "+info.getSex());
                     BMITV3.setText("-->  "+info.getBmiRate());
                     update.setText(R.string.update_updateInfo_E);
+                    getSupportActionBar().setTitle(Html.fromHtml("<font color='#ffffff'>" + getString(R.string.account_myAccount_E) + "</font>"));
+
 
                 }else {
                     accountTV.setText(R.string.account_myAccount_T);
@@ -85,6 +89,8 @@ boolean sw;
                     weightTV.setText(R.string.reg2_weight_T);
                     heightTV.setText(R.string.reg2_height_T);
                     sexTV.setText(R.string.account_sex_T);
+                    getSupportActionBar().setTitle(Html.fromHtml("<font color='#ffffff'>" + getString(R.string.account_myAccount_T) + "</font>"));
+
                     if(info.getSex().equals("Men")){ sexTV2.setText(":  "+"Erkek");}
                     else {sexTV2.setText(":  "+"Kadın");}
                     BMITV3.setText("-->  "+info.getBmiRateTR());

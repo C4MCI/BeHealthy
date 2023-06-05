@@ -1,5 +1,7 @@
 package com.example.cilek_adam;
 
+import java.util.Objects;
+
 public class UserInfo {
     public static String name,sex,bmiRateValue;
     public static int years,weight,height, calorie_taken , calorie_burn ;
@@ -58,6 +60,14 @@ public class UserInfo {
 
     public int getCalorie_burn(){
         return calorie_burn;
+    }
+
+    public int getBasalMetabolism(){
+        if (Objects.equals(sex, "men")) {
+            return (int) Math.round(66.5 + (13.7 * weight) + (5 * height) - (6.7 * years));
+        } else {
+            return (int) Math.round(66.5 + (9.6 * weight) + (1.8 * height) - (4.7 * years));
+        }
     }
     public double getBMI(){return bmi;}
     public String getBmiRate(){return bmiRateValue;}

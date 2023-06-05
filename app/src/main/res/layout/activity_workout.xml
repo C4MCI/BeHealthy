@@ -119,9 +119,9 @@
 
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/imageView9"
-        app:layout_constraintStart_toStartOf="parent"
 
-        app:srcCompat="@drawable/db" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@mipmap/denemee_foreground" />
 
     <ImageView
         android:id="@+id/imageView9"
@@ -131,7 +131,7 @@
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/imageView10"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/shoulder" />
+        app:srcCompat="@mipmap/deneme3_foreground" />
 
     <ImageView
         android:id="@+id/imageView10"
@@ -141,7 +141,7 @@
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/imageView11"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/woman" />
+        app:srcCompat="@mipmap/deneme2_foreground" />
 
     <ImageView
         android:id="@+id/imageView11"
@@ -151,7 +151,7 @@
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/imageView12"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/mandb" />
+        app:srcCompat="@mipmap/deneme4_foreground" />
 
     <ImageView
         android:id="@+id/imageView12"
@@ -159,9 +159,10 @@
         android:layout_height="103dp"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="12dp"
+        android:scaleType="matrix"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/yeter2" />
+        app:srcCompat="@mipmap/deneme5_foreground" />
 
     <TextView
         android:id="@+id/wotext1"

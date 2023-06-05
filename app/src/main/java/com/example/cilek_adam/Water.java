@@ -66,9 +66,11 @@ public class Water extends AppCompatActivity {
 
         progressBar = findViewById(R.id.water_progress);
 
+        trSwitch = findViewById(R.id.waterSwitch);
 
-
-
+        baslik.setText(R.string.water_baslikT);
+        aciklama.setText(R.string.water_aciklamaT);
+        updateButton.setText(R.string.water_buttonT);
         updateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,7 +87,7 @@ public class Water extends AppCompatActivity {
             }
         });
 
-/*        trSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+   trSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if (isChecked) {
@@ -104,7 +106,7 @@ public class Water extends AppCompatActivity {
 
         trSwitch.setChecked(sw);
 
-*/
+
 
 
     }
@@ -115,7 +117,7 @@ public class Water extends AppCompatActivity {
         if (id == android.R.id.home) {
             // Geri düğmesine basıldığında yapılacak işlemler
             // Burada belirli bir aktiviteye yönlendirebilirsiniz
-            Intent intent = new Intent(this, menu.class);
+            Intent intent = new Intent(getApplicationContext(), menu.class);
             sw = trSwitch.isChecked();
             intent.putExtra("sw", sw);
             startActivity(intent);

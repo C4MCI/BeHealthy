@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/backgroundcolor"
     android:layout_height="match_parent"
     tools:context=".Water">
 
@@ -16,13 +17,17 @@
         android:layout_marginEnd="32dp"
         android:indeterminateOnly="false"
         android:max="3000"
-        android:progress="2000"
+        android:progress="0"
         android:progressDrawable="@drawable/custom_progressbar"
-        android:progressTint="#FF1010"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:shadowDx="15"
+        android:shadowDy="15"
+        android:shadowRadius="15"
+        android:shadowColor="#000000"
+        />
 
     <Button
         android:id="@+id/water_button"
@@ -94,7 +99,7 @@
             app:srcCompat="@mipmap/tr_round" />
 
         <Switch
-            android:id="@+id/calorieSwitch"
+            android:id="@+id/waterSwitch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center" />

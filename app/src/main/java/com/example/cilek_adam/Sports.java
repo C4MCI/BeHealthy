@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.Html;
 import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
@@ -46,7 +47,7 @@ public class Sports extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sports);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("");
+        getSupportActionBar().setTitle(Html.fromHtml("<font color='#ffffff'>" + getString(R.string.sports_header_T) + "</font>"));
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_action_name);
 
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.barColor)));
@@ -142,10 +143,10 @@ public class Sports extends AppCompatActivity {
         });
 
         ArrayAdapter<CharSequence> adapterE = ArrayAdapter.createFromResource(this,
-                R.array.sports_spinner_E, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
+                R.array.sports_spinner_E, R.layout.spinnerlayout);
 
         ArrayAdapter<CharSequence> adapterT = ArrayAdapter.createFromResource(this,
-                R.array.sports_spinner_T, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
+                R.array.sports_spinner_T, R.layout.spinnerlayout);
         sportsSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
             @Override
@@ -153,11 +154,13 @@ public class Sports extends AppCompatActivity {
 
 
                 if (isChecked) {
+                    getSupportActionBar().setTitle(Html.fromHtml("<font color='#ffffff'>" + getString(R.string.sports_header_E) + "</font>"));
                     headerText.setText(R.string.sports_header_E);
                     descriptionText.setText(R.string.sports_descriptionText_E);
                     sportSpinner.setAdapter(adapterE);
                     saveButton.setText(R.string.sports_saveButton_E);
                 } else {
+                    getSupportActionBar().setTitle(Html.fromHtml("<font color='#ffffff'>" + getString(R.string.sports_header_T) + "</font>"));
                     headerText.setText(R.string.sports_header_T);
                     descriptionText.setText(R.string.sports_descriptionText_T);
                     sportSpinner.setAdapter(adapterT);

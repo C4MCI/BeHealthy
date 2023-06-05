@@ -56,6 +56,7 @@
         android:layout_marginEnd="32dp"
         android:fontFamily="@font/baloo"
         android:text="@string/daily_calorieTakenInput_T"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/daily_header" />
 
@@ -67,6 +68,7 @@
         android:layout_marginEnd="32dp"
         android:fontFamily="@font/baloo"
         android:text="@string/daily_calorieBurnInput_T"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/daily_calorieTakenText" />
 
@@ -100,11 +102,14 @@
 
     <ProgressBar
         android:id="@+id/daily_progressBar"
-        style="?android:attr/progressBarStyleLarge"
+        style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="111dp"
         android:layout_height="163dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
+        android:max="100"
+        android:progress="20"
+        android:progressDrawable="@drawable/progressbar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/daily_header" />
 
@@ -128,6 +133,7 @@
         android:layout_marginEnd="32dp"
         android:fontFamily="@font/baloo"
         android:text="@string/daily_basalInput_T"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/daily_calorieBurnText" />
 
@@ -191,4 +197,5 @@
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/daily_netCalText"
         app:layout_constraintTop_toBottomOf="@+id/daily_progressBar" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

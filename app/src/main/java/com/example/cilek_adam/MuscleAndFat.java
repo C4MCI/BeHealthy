@@ -6,6 +6,7 @@ import java.lang.Math;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -30,7 +31,9 @@ EditText belET,boyunET,kalcaET;
 
         info = new UserInfo();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("");
+        getSupportActionBar().setTitle(Html.fromHtml("<font color='#ffffff'>" + "Yağ Oranı"+ "</font>"));
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_action_name);
+
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.barColor)));
         fatTV=findViewById(R.id.fatTextView);
         belTV = findViewById(R.id.belTextView);
@@ -64,6 +67,7 @@ EditText belET,boyunET,kalcaET;
                     calculateFat.setText(R.string.fat_calculatefatratio_E);
                     fatRatioTV1.setText(R.string.fat_fatratio_E);
                     yagKGTV1.setText(R.string.fat_fatmass_E);
+                    getSupportActionBar().setTitle(Html.fromHtml("<font color='#ffffff'>" + "Fat Ratio" + "</font>"));
                 }else{
                     fatTV.setText(R.string.fat_calculatefatratio_T);
                     belTV.setText(R.string.fat_waistsize_T);
@@ -72,6 +76,7 @@ EditText belET,boyunET,kalcaET;
                     calculateFat.setText(R.string.fat_calculatefatratio_T);
                     fatRatioTV1.setText(R.string.fat_fatratio_T);
                     yagKGTV1.setText(R.string.fat_fatmass_T);
+                    getSupportActionBar().setTitle(Html.fromHtml("<font color='#ffffff'>" + "Yağ Oranı" + "</font>"));
                 }
             }
         });

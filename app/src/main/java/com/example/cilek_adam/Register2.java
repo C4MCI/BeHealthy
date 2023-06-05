@@ -42,6 +42,8 @@ boolean sw;
         setContentView(R.layout.activity_register2);
         sw = getIntent().getBooleanExtra("sw", false);
         getSupportActionBar().setTitle("");
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_action_name);
+
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.barColor)));
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();

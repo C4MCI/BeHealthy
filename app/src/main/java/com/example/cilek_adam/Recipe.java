@@ -34,6 +34,8 @@ public class Recipe extends AppCompatActivity {
         setContentView(R.layout.activity_recipe);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Recipe");
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_action_name);
+
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.barColor)));
         sw = getIntent().getBooleanExtra("sw", false);
         info = new UserInfo();

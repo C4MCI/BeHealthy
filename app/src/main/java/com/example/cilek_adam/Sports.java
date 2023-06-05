@@ -47,6 +47,8 @@ public class Sports extends AppCompatActivity {
         setContentView(R.layout.activity_sports);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("");
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_action_name);
+
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.barColor)));
         sw = getIntent().getBooleanExtra("sw", false);
         mAuth = FirebaseAuth.getInstance();

@@ -8,6 +8,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -35,7 +36,8 @@ public class Workout extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workout);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("");
+        getSupportActionBar().setTitle(Html.fromHtml("<font color='#ffffff'>" + "Antrenman Programları" + "</font>"));
+
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_action_name);
 
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.barColor)));
@@ -154,6 +156,8 @@ public class Workout extends AppCompatActivity {
                     button5.setText(R.string.program);
                     button6.setText(R.string.program);
                     button7.setText(R.string.program);
+                    getSupportActionBar().setTitle(Html.fromHtml("<font color='#ffffff'>" + "Workout Programs" + "</font>"));
+
 
                 } else {
                     baslik.setText(R.string.wo_baslikT);
@@ -167,6 +171,8 @@ public class Workout extends AppCompatActivity {
                     button5.setText(R.string.program);
                     button6.setText(R.string.program);
                     button7.setText(R.string.program);
+                    getSupportActionBar().setTitle(Html.fromHtml("<font color='#ffffff'>" + "Antrenman Programları" + "</font>"));
+
                 }
             }
 

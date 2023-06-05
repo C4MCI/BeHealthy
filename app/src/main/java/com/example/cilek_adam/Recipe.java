@@ -79,7 +79,11 @@ public class Recipe extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), Web.class);
-                i.putExtra("url", "https://fityemek.com/fit-tarifler/sef-gibi-kahvalti-hazirla/");
+                if(trSwitch.isChecked()){
+                    i.putExtra("url", "https://www.bbcgoodfood.com/recipes/herb-omelette-fried-tomatoes");
+                    i.putExtra("sw", sw);
+                }
+                else i.putExtra("url", "https://fityemek.com/fit-tarifler/sef-gibi-kahvalti-hazirla/");
                 i.putExtra("sw", sw);
                 startActivity(i);
             }
@@ -89,7 +93,11 @@ public class Recipe extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), Web.class);
-                i.putExtra("url", "https://fityemek.com/fit-tarifler/pizza-bulk-kilo-aldirir-kas-yaptirir/");
+                if(trSwitch.isChecked()){
+                    i.putExtra("url", "https://www.bulk.com/uk/the-core/protein-pizza-recipe/");
+                    i.putExtra("sw", sw);
+                }
+                else i.putExtra("url", "https://fityemek.com/fit-tarifler/pizza-bulk-kilo-aldirir-kas-yaptirir/");
                 i.putExtra("sw", sw);
                 startActivity(i);
             }
@@ -99,7 +107,11 @@ public class Recipe extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), Web.class);
-                i.putExtra("url", "https://fityemek.com/fit-tarifler/mercimek-salatasi-tarifi/");
+                if(trSwitch.isChecked()){
+                    i.putExtra("url", "https://www.loveandlemons.com/lentil-salad/");
+                    i.putExtra("sw", sw);
+                }
+                else i.putExtra("url", "https://fityemek.com/fit-tarifler/mercimek-salatasi-tarifi/");
                 i.putExtra("sw", sw);
                 startActivity(i);
             }
@@ -109,7 +121,11 @@ public class Recipe extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), Web.class);
-                i.putExtra("url", "https://fityemek.com/fit-tarifler/kilo-aldiran-yulaf-ezmesi-tarifi/");
+                if(trSwitch.isChecked()){
+                    i.putExtra("url", "https://www.bulk.com/uk/the-core/protein-pizza-recipe/");
+                    i.putExtra("sw", sw);
+                }
+                else i.putExtra("url", "https://fityemek.com/fit-tarifler/kilo-aldiran-yulaf-ezmesi-tarifi/");
                 i.putExtra("sw", sw);
                 startActivity(i);
             }
@@ -119,7 +135,11 @@ public class Recipe extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), Web.class);
-                i.putExtra("url", "https://fityemek.com/fit-tarifler/kahveli-pankek-tarifi/");
+                if(trSwitch.isChecked()){
+                    i.putExtra("url", "https://theproteinchef.co/coffee-protein-pancakes-recipe/");
+                    i.putExtra("sw", sw);
+                }
+                else i.putExtra("url", "https://fityemek.com/fit-tarifler/kahveli-pankek-tarifi/");
                 i.putExtra("sw", sw);
                 startActivity(i);
             }
@@ -129,7 +149,11 @@ public class Recipe extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), Web.class);
-                i.putExtra("url", "https://fityemek.com/fit-tarifler/sporcu-yemegi-1000-kalori/");
+                if(trSwitch.isChecked()){
+                    i.putExtra("url", "https://www.bulkbites.com/bodybuildingrecipes/lunch-tasty-turkey-and-brown-rice-skillet-1100s");
+                    i.putExtra("sw", sw);
+                }
+                else i.putExtra("url", "https://fityemek.com/fit-tarifler/sporcu-yemegi-1000-kalori/");
                 i.putExtra("sw", sw);
                 startActivity(i);
             }

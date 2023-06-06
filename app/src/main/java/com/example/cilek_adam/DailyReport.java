@@ -74,7 +74,6 @@ public class DailyReport extends AppCompatActivity {
         dailySwitch.setChecked(sw);
 
         Resources res = getResources();
-//        calorieBar.setProgress(30);
 
         if (calorieNet >= 0) {
             Drawable pbar = ResourcesCompat.getDrawable(res, R.drawable.progressbar, null);
@@ -85,8 +84,8 @@ public class DailyReport extends AppCompatActivity {
             Drawable pbar = ResourcesCompat.getDrawable(res, R.drawable.progressbar_negative, null);
             calorieBar.setScaleX(-1);
             calorieBar.setProgressDrawable(pbar);
-            int progress = (int) ((Math.abs(calorieNet)/1000.0) * 100);
-            calorieBar.setProgress(progress);
+            int progress_n = (int) ((Math.abs(calorieNet)/1000.0) * 100);
+            calorieBar.setProgress(progress_n);
         }
         if(bmi<=18){
             helpText.setText(R.string.daily_helpTextUW_T);
